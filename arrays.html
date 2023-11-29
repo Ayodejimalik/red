@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   
+</style>
+
+
+<body>
+    <header>
+    
+    </header>
+    <script>
+        const welcomeMassage = (day) => {
+            const header = document.querySelector('header');
+            const welcomeMassageH1 = document.createElement('h1');
+            welcomeMassageH1.innerText = `happy ${day}!`;
+            header.appendChild(welcomeMessageH1);
+        }
+
+
+        let  dayName = new Date();
+        switch (dayName.getDay()) {
+            case 4:
+                // console.log('it tuesday');
+                welcomeMassage("Thurday!")
+          break;
+            default:
+            console.log ('you have created a new day of the week!');
+        }
+    </script>
+    <!-- <script >
+          let resturant = {
+            name: 'food mata',
+            location: 'u.i ibadan',
+            menu: {
+                namedish:['abdulmalik'],
+                fromdish:['oyo state'],
+                darkdish:['dark in complextion'],
+                Africandish: ['rice and chicken'],
+                drink: ['coke', 'and', 'origin'],
+                meat: ['football'],
+                teamdish:['Barcelona'],
+            },
+            price: '3000naria per plate',
+            days: `'monday','tuesday','wesnesday'`,
+        }
+        alert(`my name is${resturant.menu.namedish} i came from ${resturant.menu.fromdish}, i am ${resturant.menu.darkdish},my favourite food is ${resturant.menu.Africandish} and i like drinking ${resturant.menu.drink}.and my favourite sport is ${resturant.menu.meat} and aslo my favourite team is${resturant.menu.teamdish} `)
+       
+
+    </script> -->
+<script>
+    let a = 6;
+    let b = 4;
+    let c = a++;
+    alert (c) 
+</script>
+
+
+<script>
+    let g = + (prompt ('what is your age'));
+    let v = 5;
+    alert(g+v)
+
+    var x = 2;
+    var y = 4;
+    x += y
+     alert(`new value is ${x}`)
+
+    let t = 3;
+    let f = '3';
+    alert(t==f)
+
+  let p = new Date().getDay();
+  let o = ['sunday', 'monday','tuesday','wesdnesday','thurday','friday','saturday']
+  alert(`today is ${o[p]}`)
+
+</script>
+<button onclick="bol()" >About</button>
+ <script>
+           function bol(){
+        let resturant = {
+            name: 'food mata',
+            location: 'u.i ibadan',
+            menu: {
+                Africandish: ['eba', 'fufu', 'egusi'],
+                located: ['oyo state'],
+                drink: ['coke', 'fearless', 'origin'],
+                chanishdish: ['bacelona'],
+                sport:['football'],
+                meat: [''],
+            },
+            price: '3000naria per plate',
+            days: `'monday','tuesday','wesnesday'`,
+        }
+        alert(`my name is kehinde abdulmalik  my favourite food is ${resturant.menu.Africandish}.i came from ${resturant.menu.located} and  i like having drink like ${resturant.menu.drink} 
+         my favourite sport is ${resturant.menu.sport} and my favourite club is ${resturant.menu.chanishdish} `)
+    }
+    </script>
+</body>
+
+</html>
