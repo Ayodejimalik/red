@@ -2,123 +2,95 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <style>
-  .table td,
-  th {
-    border: 1px solid black;
-    padding: 20px;
-  }
+    .table,
+    tr,
+    td,
+    th {
+        border: 1px solid black;
+        width: 50%;
+        height: 20vh;
+        margin-right: auto;
+        font-size: 20px;
+    }
 
-  .table {
-    width: 70%;
-  }
-
-  @media screen and (max-width:768px) {
     .table {
-      width: 30px;
-      margin-left: 0%;
-      padding: 0px;
+        padding: 70px;
     }
 
-    td {
-      font-size: 15px;
-    }
 
-    .tat {
-      overflow-x: hidden;
-    }
+    @media screen and (max-width:7698px) {
+        .table {
+            width: 70%;
+            margin-left: 15%;
+        }
 
-  }
+        #tat {
+            overflow-x: hidden;
+        }
+
+    }
 </style>
 
 <body>
-  <button onclick="bol()">About me</button>
-  <script>
-    let p = new Date().getDay();
-    let o = ['sunday', 'monday', 'tuesday', 'wesdnesday', 'thurday', 'friday', 'saturday']
-    alert(`Today is ${o[p]}`)
-    function bol() {
-      let resturant = {
-        name: 'food mata',
-        location: 'u.i ibadan',
-        menu: {
-          Africandish: ['rice and chicken'],
-          located: ['oyo state'],
-          boy:['dark in complexion'],
-          drink: ['coke', 'fearless', 'origin'],
-          chanishdish: ['bacelona'],
-          sport: ['football'],
-          meat: [''],
-        },
-        price: '3000naria per plate',
-        days: `'monday','tuesday','wesnesday'`,
-      }
-      alert(`my name is kehinde abdulmalik,i am ${resturant.menu.boy}  my favourite food is ${resturant.menu.Africandish} and i came from ${resturant.menu.located} and  i like having drink like ${resturant.menu.drink} 
-                my favourite sport is ${resturant.menu.sport} and my favourite club is ${resturant.menu.chanishdish} `)
-    }
-  </script>
+    <div id="tat">
+        <script>
+            let p = new Date().getDay();
+            let o = ['sunday', 'monday', 'tuesday', 'wesdnesday', 'thurday', 'friday', 'saturday']
+            alert(`Today is ${o[p]}`)
+        </script>
+        <table class="table">
+            <h1>Difference between Comparison operators and logical operators</h1>
+            <thead>
+                <tr>
 
-  <div class="tat">
-    <table class="table">
-      <thead>
-        <tr>
-          <th style="background-color: crimson;" scope="col">#</th>
-          <th style="background-color: crimson;" scope="col">Var</th>
-          <th style="background-color: crimson;" scope="col">Let</th>
-          <th style="background-color: crimson;" scope="col">Const</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th style="background-color:crimson" scope="row">Hosting</th>
-          <td style="background-color:crimson">Hosted at top of global scope.<br><br>can be used before the declaration.
-          </td>
-          <td style="background-color:crimson">Hosted at top some private scope and only available after assinging value
-          </td>
-          <td style="background-color:crimson">Hosted at top some private scope and only available after assigning
-            value.</td>
-        </tr>
-        <tr>
-          <th style="background-color:crimson" scope="row">Scope</th>
-          <td style="background-color:crimson">Global scope nomarlly. <br> Start to end of the function inside of the
-            function. </td>
-          <td style="background-color:crimson"> Block scoped always.Start to end of the current scope anywhere. </td>
-          <td style="background-color:crimson">Block Scoped always Start to end of the current scope anywhere. </td>
-        </tr>
-        <tr>
-          <th style="background-color:crimson" scope="row">Redeclartion</th>
-          <td style="background-color:crimson">Yes, we can redeclare it in the same scope.</td>
-          <td style="background-color:crimson">no,we can't reduce it in same scope</td>
-          <td style="background-color:crimson">no,we can't redeclare or reinnitialize it.</td>
-        </tr>
-      </tbody>
-    </table>
-    <nav aria-label="Page navigation example">
-      <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-        <li class="page-item"><a class="page-link" href="index.html">1</a></li>
-        <li class="page-item"><a class="page-link" href="history.html">2</a></li>
-        <li class="page-item"><a class="page-link" href="quotes.html">3</a></li>
-        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-      </ul>
-    </nav>
-  </div>
+                    <th scope="col">Comparison operators</th>
+                    <th scope="col">Logical operators</th>
 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
 
+                    <td> Comparison operators are in logica statement to determine equality</td>
+                    <td>Logical operators are used to determine the logic between variables or value</td>
 
+                </tr>
+                <tr>
 
+                    <td>Comparison operators are used to compare values and return a boolan (true or false) result</td>
+                    <td>logical are use to combine multiple condition and return a boolean result </td>
 
+                </tr>
+                <tr>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-    crossorigin="anonymous"></script>
+                    <td>Comparison are use to combine strings </td>
+                    <td>logical operators are use to perform logical opeation and include, and not,or not</td>
+                </tr>
+                <tr>
+
+                    <td>Comparison operators are in logical statement to determine </td>
+                    <td> Logical operators are use in determine the logic between the variables</td>
+                </tr>
+                <tr>
+
+                    <td>Comparison operators that compare data values to produce true or false result </td>
+                    <td>Logical operators allow you to combine two or more condition</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
