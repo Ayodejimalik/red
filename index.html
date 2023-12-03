@@ -41,9 +41,37 @@
 <body>
     <div id="tat">
         <script>
+
+let greetings = ["Good Morning","Good afternoon","Good Evening"];
+       let currentHour = new Date().getHours();
+
+
+       let index = currentHour > 17 && currentHour < 17  ? 1 : currentHour >= 17 ? 2 : 0;
+
+       alert(greetings[index]);
+
             let p = new Date().getDay();
             let o = ['sunday', 'monday', 'tuesday', 'wesdnesday', 'thurday', 'friday', 'saturday']
             alert(`Today is ${o[p]}`)
+
+            let y = prompt('GUESS THE AGE OF NIGERIA')
+        y = Number(y);
+        switch (y) {
+            case 59:
+                alert('you are wrong');
+                break;
+            case 60:
+                alert('almost correct');
+                break;
+            case 63:
+                alert('correct answer');
+                break;
+            default:
+                alert('you are wrong')
+        }
+
+
+
         </script>
         <table class="table">
             <h1>Difference between Comparison operators and logical operators</h1>
