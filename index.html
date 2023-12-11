@@ -7,152 +7,81 @@
     <title>Document</title>
 </head>
 <style>
-    * {
-
-        box-sizing: border-box;
-    }
-
-    body {
-        min-height: 100vh;
-        justify-content: center;
-        align-items: center;
-
-    }
-
-    div {
-        text-align: center;
-    }
-
-    div h1 {
-        letter-spacing: 2px;
-        text-transform: uppercase;
-
-    }
-
-    div input[type=number] {
-        margin: 8px 0;
-        padding: 8px;
-        width: 40%;
-        font-size: 16px;
-    }
-
-    div input[type=text] {
-        margin: 8px 0;
-        padding: 8px;
-        width: 40%;
-        font-size: 20px;
-        background-color: crimson;
-        box-shadow: inset 1px;
-
-    }
-
-    div input[type=number]:read-only {
-        border: 1px solid red;
+    #gen{
+        border: 2px solid red;
+        width: fit-content;
+        margin: auto;
         background-color: red;
-        color: chartreuse;
+        border: none;
         text-align: center;
-        font-size: bold;
-        font-weight: bolder;
+        padding:70px;
+        border-radius: 20px;
     }
-
-    div button {
-        margin: 0 4px;
-        padding: 6px 6px;
-        width: 32px;
-        background-color: red;
-
+    input{
+        height: 9vh;
+        width: 70%;
+        border: none;
+        border-radius: 5px 5px 5px 5px;
     }
-
-    div button:hover {
-        background-color: chartreuse;
-    }
+    button{
+    width: 70%;
+    height: 9vh;
+    border: none;
+    border-radius: 5px 5px 5px 5px;
+    background-color:blue;
+  }
+   button:hover{
+    background-color: chartreuse;
+   }
 </style>
 
 <body>
-    <div id="tat">
-        <!-- <script>
-        function taiwo(age){
-            if (age>=18){
-                return true;
-            }
-            else{
-           return confirm('do you hvae your parent permission');
-            }
-        }
-
-        let age= prompt('how old are you')
-        if (taiwo(age)){
-            alert ('access granted');
-        } 
-        else{
-            alert('access denied');
-        } -->
-
-
-
-
-        </script>
-        <script>
-
-            let p = new Date().getDay();
+    <div id="gen">
+        <h1>Guesing a secret <br> Number </h1>
+        <marquee behavior="" direction="">welcome</marquee>
+        <!-- <video src=""></video> -->
+        <input type="text" placeholder="number 1" id="num"><br><br>
+        <span id="raty"></span><br><br>
+        <button onclick="ade()">Check</button><br>
+    </div>
+    <script>
+          let p = new Date().getDay();
             let o = ['sunday', 'monday', 'Tuesday', 'Wesdnesday', 'Thurday', 'Friday', 'Saturday']
             alert(`Today is ${o[p]}`)
 
+        let num;
+        let raty;
+        let secrectnumber; 
 
 
-            let retirement = (birthyear) => {
-                let k = new Date().getFullYear() - birthyear;
-                return 60 - k;
+
+        function ade() {
+            num = document.querySelector('#num').value;
+            raty = document.querySelector('#raty');
+            secrectnumber = 15;
+            if (!num || isNaN(num)) {
+                raty.innerHTML = 'invalid number';
+             
             }
-            let m = prompt('which were you given birth')
-            alert(`you have ${retirement(m)} years before you will retire from the civil service work`)
-        </script>
+         else if (num < secrectnumber) {
+                raty.innerHTML = 'you are too low';
+            }
+            else if (num > secrectnumber){
+                raty.innerHTML = 'Your number is high';
+                raty.style.color = 'gold'
+            }
 
-        <div id="rat">
-            <h1>Simple arithemetic<br> caculator</h1>
-            <input type="text" placeholder="number 1" id="num1"><br> 
-            <input type="text" placeholder="Number 2" id="num2"><br>
-
-            <button id="add">+</button>
-            <button id="sub">-</button>
-            <button id="mut">x</button>
-            <button id="div">/</button><br>
-
-            <input type="number" readonly id="result">
-        </div>
-        <script>
-            var n1 = document.getElementById("num1");
-            var n2 = document.getElementById("num2");
-            var res = document.getElementById("result");
-
-            document.getElementById("add").addEventListener
-                ("click", function () {
-                    res.value =
-                        parseInt(n1.value) + parseInt(n2.value);
-                });
-            document.getElementById("sub").addEventListener
-                ("click", function () {
-                    res.value =
-                        parseInt(n2.value) - parseInt(n1.value);
-                });
-            document.getElementById("mut").addEventListener
-                ("click", function () {
-                    res.value =
-                        parseInt(n1.value) * parseInt(n2.value);
-                });
-            document.getElementById("div").addEventListener
-                ("click", function () {
-                    res.value =
-                        parseInt(n1.value) / parseInt(n2.value);
-                });
+            else if (num == secrectnumber) {
+                raty.innerHTML = 'You are correct 👏👏';
+                raty.style.color = 'white'
+                raty.style.backgroundColor = 'green'
+            }
 
 
+        }
+    </script>
 
 
-
-        </script>
-
-    </div>
 </body>
 
 </html>

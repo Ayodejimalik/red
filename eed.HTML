@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+
+        box-sizing: border-box;
+    }
+
+    body {
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    div {
+        text-align: center;
+    }
+
+    div h1 {
+        letter-spacing: 2px;
+        text-transform: uppercase;
+
+    }
+
+    div input[type=number] {
+        margin: 8px 0;
+        padding: 8px;
+        width: 40%;
+        font-size: 16px;
+    }
+
+    div input[type=text] {
+        margin: 8px 0;
+        padding: 8px;
+        width: 40%;
+        font-size: 20px;
+        background-color: crimson;
+        box-shadow: inset 1px;
+
+    }
+
+    div input[type=number]:read-only {
+        border: 1px solid red;
+        background-color: red;
+        color: chartreuse;
+        text-align: center;
+        font-size: bold;
+        font-weight: bolder;
+    }
+
+    div button {
+        margin: 0 4px;
+        padding: 6px 6px;
+        width: 32px;
+        background-color: red;
+
+    }
+
+    div button:hover {
+        background-color: chartreuse;
+    }
+
+    #ded {
+        width: 20%;
+        border: none;
+        height: 15vh;
+        text-align: center;
+        margin-left: 40%;
+        margin-top: 3%;
+        background-color: #F99FC9FF;
+    }
+
+    #tat {
+        border: 20px solid black;
+        height: 70vh;
+        width: fit-content;
+        margin-left: 35%;
+        border-top-color:  #F1F3FFFF;
+        border-bottom-color: #F7CED7FF;
+        border-left-color: #F99FC9FF;
+        border-right-color: #EF6079FF;
+    }
+   
+</style>
+
+<body>
+
+    <div id="tat">
+        <h1>Simple arithemetic<br> caculator</h1>
+        <!-- <script>
+        function taiwo(age){
+            if (age>=18){
+                return true;
+            }
+            else{
+           return confirm('do you hvae your parent permission');
+            }
+        }
+
+        let age= prompt('how old are you')
+        if (taiwo(age)){
+            alert ('access granted');
+        } 
+        else{
+            alert('access denied');
+        } 
+
+
+
+
+        </script> -->
+        <!-- <script>
+
+            let p = new Date().getDay();
+            let o = ['sunday', 'monday', 'Tuesday', 'Wesdnesday', 'Thurday', 'Friday', 'Saturday']
+            alert(`Today is ${o[p]}`)
+
+ 
+
+            let retirement = (birthyear) => {
+                let k = new Date().getFullYear() - birthyear;
+                return 60 - k;
+            }
+            let m = prompt('which were you given birth ')
+            alert(`you have ${retirement(m)} years before you will retire from the civil service work`)
+        </script> -->
+
+
+ 
+
+
+        <div id="rat">
+            <input type="text" placeholder="number 1" id="num1"><br>
+            <input type="text" placeholder="Number 2" id="num2"><br>
+
+            <button id="add" onclick="add()">+</button>
+            <button id="sub" onclick="sub()">-</button>
+            <button id="mut" onclick="mut()">x</button>
+            <button id="div" onclick="div()">/</button><br>
+            <input id="result" type="text" readonly>         
+        </div>
+       
+        <script>
+
+            function mar() {
+                let a = prompt("input your birth year ");
+                const b = new Date().getFullYear();
+                let c = b - a
+                let retire = 65 - c
+
+                if (!a || isNaN(a)) {
+                    alert(`input a year`)
+                }
+                else if (a <= 1958) {
+                    alert(`You are old enough plz go and retire`)
+                }
+                else if (a > b) {
+                    alert(`invalid year`)
+                }
+                else {
+                    alert(`you have  ${retire} years to retire from civil service work `)
+                }
+            }
+
+            function add() {
+                let a = + document.getElementById("num1").value;
+                let b = + document.getElementById("num2").value;
+                let c = document.getElementById("result");
+                let d = a + b
+                c.value = d
+
+                if (!(a) || isNaN(b)) {
+                    alert(`invalid number`)
+
+                }
+
+            }
+            function sub() {
+                let a = + document.getElementById("num1").value;
+                let b = + document.getElementById("num2").value;
+                let c = document.getElementById("result");
+                let d = a - b
+                c.value = d
+
+                if (!(a) || isNaN(b)) {
+                    alert(`invalid number`)
+
+                }
+
+            }
+            function mut() {
+                let a = + document.getElementById("num1").value;
+                let b = + document.getElementById("num2").value;
+                let c = document.getElementById("result");
+                let d = a * b
+                c.value = d
+                if (!(a) || isNaN(b)) {
+                    alert(`invalid number`)
+
+                }
+
+            }
+            function div() {
+                let a = + document.getElementById("num1").value;
+                let b = + document.getElementById("num2").value;
+                let c = document.getElementById("result");
+                let d = a / b
+                c.value = d
+                if (!(a) || isNaN(b)) {
+                    alert(`invalid number`)
+
+                }
+
+            }
+        </script>
+
+
+
+
+
+        <!-- // var n1 = document.getElementById("num1");
+            // var n2 = document.getElementById("num2");
+            // var res = document.getElementById("result");
+
+            // document.getElementById("add").addEventListener
+            //     ("click", function () {
+            //         res.value =
+            //             parseInt(n1.value) + parseInt(n2.value);
+            //     });
+            // document.getElementById("sub").addEventListener
+            //     ("click", function () {
+            //         res.value =
+            //             parseInt(n2.value) - parseInt(n1.value);
+            //     });
+            // document.getElementById("mut").addEventListener
+            //     ("click", function () {
+            //         res.value =
+            //             parseInt(n1.value) * parseInt(n2.value);
+            //     });
+            // document.getElementById("div").addEventListener
+            //     ("click", function () {
+            //         res.value =
+            //             parseInt(n1.value) / parseInt(n2.value);
+            //     }); -->
+
+
+
+
+
+    </div>
+    <button onclick="mar()" id="ded">check your date of birth</button>
+</body>
+
+</html>
