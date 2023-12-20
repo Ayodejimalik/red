@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<style>
+   #pol{
+      border: 1px solid red;
+      background-color: grey;
+      border: none;
+      border-radius: 10px;
+      width: fit-content;
+      text-align: center;
+      margin-left: 30%;
+   }
+   #pol{
+       animation-name: baba;
+        animation-duration: 3s;
+        animation-timing-function: linear;
+        animation-delay: 5s;
+        animation-iteration-count: infinite;
+        animation-direction: forwards;
+   }
+   @keyframes baba {
+      from{
+         background-image: url(img/down\ \(4\).jpg);
+      }
+      to{
+         background-image: url(img/down\ \(2\).jpg);
+      }
+   }
+</style>
+
+<body>
+ 
+   <div id="pol">
+      <h1>Investment caculator</h1>
+      <label for="text">Amout To Invest</label><br><br>
+      <input type="text" id="Amount"><br><br>
+      <label for="time">Time</label><br><br>
+      <select style="width: 150px;" id="time">
+         <option value="1">1 monthly</option>
+         <option value="2">2 monthly</option>
+         <option value="3">3 monthly</option>
+         <option value="4">4 monthly</option>
+         <option value="5">5 monthly</option>
+         <option value="6">6 monthly</option>
+         <option value="7">7 monthly</option>
+         <option value="8">8 monthly</option>
+         <option value="9">9 monthly</option>
+         <option value="10">10 monthly</option>
+         <option value="12">12 monthly</option>
+         <option>1 Year</option>
+         <option>2 Year</option>
+      </select><br><br>
+
+      <button onclick="answer()"
+         style=" color: blue; border: none;border-radius: 5px; width: 100px;">Caculate</button>
+      <p> Amount: <span id="output1"></span></p>
+      <p>Total Interest:<span id="output2"></span></p>
+      <p>Total value:<span id="output3"></span></p>
+   </div>
+   <script>
+      let Amount, time, Total, Interest, output1, output2, output3;
+
+
+      function answer() {
+         Amount = +(document.querySelector('#Amount').value);
+         time = +(document.querySelector('#time').value);
+         rate = 0.15;
+
+         Interest = Amount * rate * time;
+         console.log(Interest);
+         Total = Interest + Amount;
+         console.log(Total);
+
+         document.getElementById("output1").innerHTML = Amount;
+         document.getElementById("output2").innerHTML = '15%';
+         document.getElementById("output3").innerHTML = Total;
+
+
+
+      }
+   </script>
+  <!-- <script>
+      for (let i = 10; i <= 30; i++) {
+         // console.log(i)
+         document.write(`number${i}:<br>`);
+
+      }
+      let days = ['monday', 'tuesday', 'wenesday']
+      for (let i = 0; i < days.length; i++) {
+         // document.write('days[i]<br>')
+      }
+      document.write(days[0])
+      document.write(days[1])
+
+
+   </script> -->
+</body>
+
+</html>

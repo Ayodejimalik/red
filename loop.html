@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h1>A odd Number</h1>
+        <input type="text" id="hul"><br><br>
+        <span id="yul"></span>
+        <button onclick="sad()"> Start</button>
+    </div>
+    <div>
+        <button value="" id="btn"></button>
+        <button value="" id="btn"></button>
+        <button value="" id="btn"></button>
+        <button value="" id="btn"></button>
+    </div>
+    <script>
+        // let btn = document.querySelectorAll('btn')
+
+        // for (let exercise = 1; exercise < 4; exercise++) {
+        //     console.log(`---stating exercise ${exercise}`)
+        //     for (let rep = 1; rep < 6; rep++) {
+        //         console.log(`lifting weigth reption ${rep}`)
+        //     }
+        // }
+        // let i = 3; while (i) alert(i--)
+        // let q = 0;
+        // do {
+        //     alert(q);
+        //     q++
+        //         while (q < 3)
+        // }
+        let hul, yul;
+
+        function sad() {
+
+            hul = document.querySelector('#hul').value;
+            yul = document.querySelector('#yul');
+            for (f = 0; f < 2; f++) {
+                if (hul % 3 == 0) {
+                    yul.innerHTML = 'You are correct';
+                }
+                else if (hul % 2 == 0) {
+                    yul.innerHTML = 'You are wrong plz only odd number'
+                }
+
+            }
+        }
+        //    let dice =Math.trunc (Math.random()*6)+1;
+        //    while (dice !==6){
+        //     console.log(`you rolled a ${dice}`);
+        //     dice= math.trunc(math.random()*6)+1;
+        //     if (dice==6) console.log()
+
+        //    }
+
+    </script>
+
+</body>
+
+</html>

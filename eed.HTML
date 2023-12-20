@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
 </head>
 <style>
     * {
@@ -36,30 +40,29 @@
         font-size: 16px;
     }
 
-    div input[type=text] {
+    #num1,
+    input[type=text] {
         margin: 8px 0;
         padding: 8px;
         width: 40%;
-        font-size: 20px;
-        background-color: crimson;
         box-shadow: inset 1px;
 
     }
 
     div input[type=number]:read-only {
         border: 1px solid red;
-        background-color: red;
+
         color: chartreuse;
         text-align: center;
-        font-size: bold;
-        font-weight: bolder;
+        font-size: smaller;
+
     }
 
     div button {
         margin: 0 4px;
         padding: 6px 6px;
         width: 32px;
-        background-color: red;
+
 
     }
 
@@ -77,155 +80,251 @@
         background-color: #F99FC9FF;
     }
 
-    #tat {
-        border: 20px solid black;
-        height: 70vh;
+    #rat {
+        border: 10px solid black;
+        background-color: grey;
         width: fit-content;
-        margin-left: 35%;
-        border-top-color:  #F1F3FFFF;
-        border-bottom-color: #F7CED7FF;
-        border-left-color: #F99FC9FF;
-        border-right-color: #EF6079FF;
+        margin: auto;
     }
-   
+
+    #pol {
+        background-color: grey;
+        border: none;
+        border-radius: 10px;
+        width: fit-content;
+        text-align: center;
+        margin-top: 5%;
+        color: white;
+        margin: auto;
+    }
+
+    #Amount {
+        background-color: white;
+    }
+
+    #but {
+        background-color: white;
+
+    }
+
+    #pol {
+        animation-name: baba;
+        animation-duration: 3s;
+        animation-timing-function: linear;
+        animation-delay: 5s;
+        animation-iteration-count: infinite;
+        animation-direction: forwards;
+    }
+
+
+
+    @media screen and(max-width:768px) {
+        #rat {
+            height: 50vh;
+        }
+
+    }
+
+    @keyframes baba {
+        from {
+            background-image: url(img/down\ \(4\).jpg)
+        }
+
+        to {
+            background-image: url(img/down\ \(2\).jpg);
+        }
+    }
 </style>
 
 <body>
 
+    <!-- caculator -->
     <div id="tat">
-        <h1>Simple arithemetic<br> caculator</h1>
-        <!-- <script>
-        function taiwo(age){
-            if (age>=18){
-                return true;
-            }
-            else{
-           return confirm('do you hvae your parent permission');
-            }
-        }
-
-        let age= prompt('how old are you')
-        if (taiwo(age)){
-            alert ('access granted');
-        } 
-        else{
-            alert('access denied');
-        } 
-
-
-
-
-        </script> -->
-        <!-- <script>
-
-            let p = new Date().getDay();
-            let o = ['sunday', 'monday', 'Tuesday', 'Wesdnesday', 'Thurday', 'Friday', 'Saturday']
-            alert(`Today is ${o[p]}`)
-
- 
-
-            let retirement = (birthyear) => {
-                let k = new Date().getFullYear() - birthyear;
-                return 60 - k;
-            }
-            let m = prompt('which were you given birth ')
-            alert(`you have ${retirement(m)} years before you will retire from the civil service work`)
-        </script> -->
-
-
- 
-
 
         <div id="rat">
+
+            <h1 style="margin-left: -0%;">Simple arithemetic<br> caculator</h1>
+
             <input type="text" placeholder="number 1" id="num1"><br>
             <input type="text" placeholder="Number 2" id="num2"><br>
 
-            <button id="add" onclick="add()">+</button>
-            <button id="sub" onclick="sub()">-</button>
-            <button id="mut" onclick="mut()">x</button>
-            <button id="div" onclick="div()">/</button><br>
-            <input id="result" type="text" readonly>         
+            <button id="add">+</button>
+            <button id="sub">-</button>
+            <button id="mut">x</button>
+            <button id="div">/</button><br>
+            <input id="result" type="text" readonly><br>
         </div>
-       
-        <script>
+        <br><br><br><br>
 
-            function mar() {
-                let a = prompt("input your birth year ");
-                const b = new Date().getFullYear();
-                let c = b - a
-                let retire = 65 - c
 
-                if (!a || isNaN(a)) {
-                    alert(`input a year`)
-                }
-                else if (a <= 1958) {
-                    alert(`You are old enough plz go and retire`)
-                }
-                else if (a > b) {
-                    alert(`invalid year`)
-                }
-                else {
-                    alert(`you have  ${retire} years to retire from civil service work `)
-                }
-            }
+        <!-- Investment caculator -->
+        <div id="pol">
+            <h1>Investment caculator</h1>
+            <label for="text">Amout To Invest</label><br><br>
+            <input type="text" id="Amount"><br><br>
+            <label for="time">Time</label><br><br>
+            <select style="width: 150px;" id="time">
+                <option value="1">1 monthly</option>
+                <option value="2">2 monthly</option>
+                <option value="3">3 monthly</option>
+                <option value="4">4 monthly</option>
+                <option value="5">5 monthly</option>
+                <option value="6">6 monthly</option>
+                <option value="7">7 monthly</option>
+                <option value="8">8 monthly</option>
+                <option value="9">9 monthly</option>
+                <option value="10">10 monthly</option>
+                <option value="12">12 monthly</option>
+            </select><br><br>
 
-            function add() {
-                let a = + document.getElementById("num1").value;
-                let b = + document.getElementById("num2").value;
-                let c = document.getElementById("result");
-                let d = a + b
-                c.value = d
 
-                if (!(a) || isNaN(b)) {
-                    alert(`invalid number`)
+            <button onclick="answer()" id="but"
+                style=" color: blue; border: none;border-radius: 5px; width: 100px;">Caculate</button>
+            <p> Amount: <span id="output1"></span></p>
+            <p>Total Interest:<span id="output2"></span></p>
+            <p>Total value:<span id="output3"></span></p>
 
-                }
+            <script>
+                let but = document.querySelectorAll('button');
+                console.log(but)
+                for (let r = 0; r < but.length; r++) {
+                    but[r].addEventListener('click', () => {
+                        let num1 = Number(document.getElementById('num1').value);
+                        let num2 = Number(document.getElementById('num2').value);
+                        let c = document.getElementById('result');
 
-            }
-            function sub() {
-                let a = + document.getElementById("num1").value;
-                let b = + document.getElementById("num2").value;
-                let c = document.getElementById("result");
-                let d = a - b
-                c.value = d
 
-                if (!(a) || isNaN(b)) {
-                    alert(`invalid number`)
 
-                }
+                        if (but[r].id == 'add') {
+                            c.value = num1 + num2;
+                        }
 
-            }
-            function mut() {
-                let a = + document.getElementById("num1").value;
-                let b = + document.getElementById("num2").value;
-                let c = document.getElementById("result");
-                let d = a * b
-                c.value = d
-                if (!(a) || isNaN(b)) {
-                    alert(`invalid number`)
+                        else if (but[r].id == 'sub') {
+                            c.value = num1 - num2;
+                        }
 
-                }
-
-            }
-            function div() {
-                let a = + document.getElementById("num1").value;
-                let b = + document.getElementById("num2").value;
-                let c = document.getElementById("result");
-                let d = a / b
-                c.value = d
-                if (!(a) || isNaN(b)) {
-                    alert(`invalid number`)
+                        else if (but[r].id == 'mut') {
+                            c.value = num1 * num2;
+                        }
+                        else if (but[r].id == 'div') {
+                            c.value = num1 / num2;
+                        }
+                    })
 
                 }
 
-            }
-        </script>
 
 
 
 
 
-        <!-- // var n1 = document.getElementById("num1");
+
+                function mar() {
+                    let a = prompt("input your birth year ");
+                    const b = new Date().getFullYear();
+                    let c = b - a
+                    let retire = 65 - c
+
+                    if (!a || isNaN(a)) {
+                        alert(`input a year`)
+                    }
+
+                    else if (a <= 1958) {
+                        alert(`You are old enough plz go and retire`)
+                    }
+                    else if (a > b) {
+                        alert(`invalid year`)
+                    }
+                    else {
+                        alert(`you have  ${retire} years to retire from civil service work `)
+                    }
+                }
+
+                //   interest caculator
+
+                let Amount, time, Total, Interest, output1, output2, output3;
+
+
+                function answer() {
+                    Amount = +(document.querySelector('#Amount').value);
+                    time = +(document.querySelector('#time').value);
+                    rate = 0.15;
+
+                    Interest = Amount * rate * time;
+                    console.log(Interest);
+                    Total = Interest + Amount;
+                    console.log(Total);
+
+                    document.getElementById("output1").innerHTML = Amount;
+                    document.getElementById("output2").innerHTML = '15%';
+                    document.getElementById("output3").innerHTML = Total;
+                }
+                // let b, c, d;
+
+                // function add() {
+                //     a = + document.getElementById("num1").value;
+                //     b = + document.getElementById("num2").value;
+                //     c = document.getElementById("result");
+                //     d = a + b
+                //     c.value = d
+
+                //     if (!(a) || isNaN(b)) {
+                //         alert(`invalid number`)
+
+                //     }
+
+                // }
+                // function sub() {
+                //     a = + document.getElementById("num1").value;
+                //     b = + document.getElementById("num2").value;
+                //     c = document.getElementById("result");
+                //     d = a - b
+                //     c.value = d
+
+                //     if (!(a) || isNaN(b)) {
+                //         alert(`invalid number`)
+
+                //     }
+
+                // }
+                // function mut() {
+                //     let a = + document.getElementById("num1").value;
+                //     let b = + document.getElementById("num2").value;
+                //     let c = document.getElementById("result");
+                //     let d = a * b
+                //     c.value = d
+                //     if (!(a) || isNaN(b)) {
+                //         alert(`invalid number`)
+
+                //     }
+
+                // }
+                // function div() {
+                //     a = + document.getElementById("num1").value;
+                //     b = + document.getElementById("num2").value;
+                //     c = document.getElementById("result");
+                //     d = a / b
+                //     c.value = d
+                //     if (!(a) || isNaN(b)) {
+                //         alert(`invalid number`)
+
+                //     }
+
+                // }
+
+
+
+
+
+
+
+            </script>
+
+
+
+
+
+            <!-- // var n1 = document.getElementById("num1");
             // var n2 = document.getElementById("num2");
             // var res = document.getElementById("result");
 
@@ -254,8 +353,20 @@
 
 
 
-    </div>
-    <button onclick="mar()" id="ded">check your date of birth</button>
+        </div>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="index.html">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="index.html">1</a></li>
+                <li class="page-item"><a class="page-link" href="eed.HTML">2</a></li>
+                <li class="page-item"><a class="page-link" href="dfd.html">3</a></li>
+                <li class="page-item"><a class="page-link" href="dfd.html">Next</a></li>
+            </ul>
+        </nav>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

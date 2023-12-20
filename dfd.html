@@ -14,11 +14,29 @@
   th {
     border: 1px solid black;
     padding: 20px;
+    color: white;
+
   }
 
   .table {
-    width: 70%;
+    width: 50%;
+    margin: auto;
   }
+
+  .god {
+    background-color: chartreuse;
+    border: 5px solid black;
+    width: 70%;
+    border-radius: 10px;
+    margin: auto;
+  }
+
+  #jam {
+    background-color: grey;
+    text-align: center;
+    margin: auto;
+  }
+
 
   @media screen and (max-width:768px) {
     .table {
@@ -36,37 +54,148 @@
     }
 
   }
+
+  #ded {
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: inset 3px 3px 3px 1px;
+    border: none;
+    text-align: center;
+    margin-top: 3%;
+    background-color: #F99FC9FF;
+    padding: 10px;
+  }
 </style>
 
 <body>
-  <button onclick="bol()">About me</button>
+
+  <!-- A Even Number -->
+
+
+
+  <!-- Checking Date of Birth -->
+  <button id="ded" onclick="bol()"
+    style="border: none; border-radius: 5%; background-color: #F99FC9FF;padding: 10px; ">About
+    me</button>
+  <button onclick="mar()" id="ded">check your date of birth</button>
+  <button onclick="guy()" id="ded">Guessing nigeria age</button>
+  <br>
   <script>
+    // Greetings
+    let greetings = ["Good Morning", "Good afternoon", "Good Evening"];
+    let currentHour = new Date().getHours();
+
+
+    let index = currentHour > 17 && currentHour < 17 ? 1 : currentHour >= 17 ? 2 : 0;
+
+    alert(greetings[index]);
+
     let p = new Date().getDay();
     let o = ['sunday', 'monday', 'tuesday', 'wesdnesday', 'thurday', 'friday', 'saturday']
     alert(`Today is ${o[p]}`)
+
+
+    // About Me
     function bol() {
       let resturant = {
         name: 'food mata',
-        location: 'u.i ibadan',   
+        location: 'u.i ibadan',
         menu: {
-          Africandish: ['rice and chicken'],
+          Africandish: ['eba', 'fufu', 'egusi'],
           located: ['oyo state'],
-          boy:['dark in complexion'],
           drink: ['coke', 'fearless', 'origin'],
-          chanishdish: ['bacelona'],
+          chanishdish: ['barcelona'],
           sport: ['football'],
           meat: [''],
         },
         price: '3000naria per plate',
         days: `'monday','tuesday','wesnesday'`,
       }
-      alert(`my name is kehinde abdulmalik,i am ${resturant.menu.boy}  my favourite food is ${resturant.menu.Africandish} and i came from ${resturant.menu.located} and  i like having drink like ${resturant.menu.drink} 
-                my favourite sport is ${resturant.menu.sport} and my favourite club is ${resturant.menu.chanishdish} `)
+      alert(`my name is kehinde abdulmalik   i am dark in complextion.i am from ${resturant.menu.located} and  i like having drink like ${resturant.menu.drink} 
+         my favourite sport is ${resturant.menu.sport} and my favourite club is ${resturant.menu.chanishdish} `)
     }
+
+
+    // Checking date of birth
+    function mar() {
+      let a = prompt("input your birth year ");
+      const b = new Date().getFullYear();
+      let c = b - a
+      let retire = 65 - c
+
+      if (!a || isNaN(a)) {
+        alert(`input a year`)
+      }
+      else if (a <= 1958) {
+        alert(`You are old enough plz go and retire`)
+      }
+      else if (a > b) {
+        alert(`invalid year`)
+      }
+      else {
+        alert(`you have  ${retire} years to retire from civil service work `)
+      }
+    }
+
+
+    // Guess the age off nigeria 
+    function guy() {
+      let y = prompt('GUESS THE AGE OF NIGERIA')
+      y = Number(y);
+      switch (y) {
+        case 59:
+          alert('you are wrong');
+          break;
+        case 60:
+          alert('almost correct 👏');
+          break;
+        case 63:
+          alert('correct answer');
+          break;
+        default:
+          alert('you are wrong')
+      }
+    }
+
+    // A odd Number
+    // let hul, yul;
+
+    // function sad() {
+
+    //   hul = document.querySelector('#hul').value;
+    //   yul = document.querySelector('#yul');
+    //   for (f = 0; f < 2; f++) {
+    //     if (hul % 3 == 0) {
+    //       yul.innerHTML = 'You are correct';
+    //     }
+    //     else if (hul % 2 == 0) {
+    //       yul.innerHTML = 'You are wrong plz only odd number'
+    //     }
+
+    //   }
+    // }
+
+    let hul, yul;
+
+    function sad() {
+
+      hul = document.querySelector('#hul').value;
+      yul = document.querySelector('#yul');
+      for (f = 0; f < 2; f++) {
+        if (hul % 2 == 0) {
+          yul.innerHTML = 'You are correct';
+        }
+        else if (hul % 2 == 0) {
+          yul.innerHTML = 'You are wrong plz only odd number'
+        }
+
+      }
+    }
+
   </script>
 
   <div class="tat">
-    <table class="table">
+    <table class="table" style="margin-top: 10px;">
       <thead>
         <tr>
           <th style="background-color: crimson;" scope="col">#</th>
@@ -100,18 +229,217 @@
         </tr>
       </tbody>
     </table>
-    <nav aria-label="Page navigation example">
-      <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-        <li class="page-item"><a class="page-link" href="index.html">1</a></li>
-        <li class="page-item"><a class="page-link" href="history.html">2</a></li>
-        <li class="page-item"><a class="page-link" href="quotes.html">3</a></li>
-        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-      </ul>
-    </nav>
+
+    <table class="table" style="margin-top: 5px;">
+      <h1
+        style="border: 1px solid black; background-color: green;box-shadow: inset 2px 2px 2px 2px;width: 50%; margin: auto; margin-top: 5%;">
+        Difference between Comparison operators and logical <br>operators</h1>
+      <thead>
+        <tr>
+
+          <th scope="col" style="background-color: #F99FC9FF;">Comparison operators</th>
+          <th scope="col" style="background-color: #F99FC9FF;">Logical operators</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+
+          <td style="background-color: #F99FC9FF;"> Comparison operators are in logica statement to determine equality
+          </td>
+          <td style="background-color: #F99FC9FF;">Logical operators are used to determine the logic between variables
+            or value</td>
+
+        </tr>
+        <tr>
+
+          <td style="background-color: #F99FC9FF;">Comparison operators are used to compare values and return a boolan
+            (true or false) result</td>
+          <td style="background-color: #F99FC9FF;">logical are use to combine multiple condition and return a boolean
+            result </td>
+
+        </tr>
+        <tr>
+
+          <td style="background-color: #F99FC9FF;">Comparison are use to combine strings </td>
+          <td style="background-color: #F99FC9FF;">logical operators are use to perform logical opeation and include,
+            and not,or not</td>
+        </tr>
+        <tr>
+
+          <td style="background-color: #F99FC9FF;">Comparison operators are in logical statement to determine </td>
+          <td style="background-color: #F99FC9FF;"> Logical operators are use in determine the logic between the
+            variables</td>
+        </tr>
+        <tr>
+
+          <td style="background-color: #F99FC9FF;">Comparison operators that compare data values to produce true or
+            false result </td>
+          <td style="background-color: #F99FC9FF;">Logical operators allow you to combine two or more condition</td>
+        </tr>
+
+      </tbody>
+    </table>
+    <div class="god" style="margin-top: 5%;">
+      <h1>HISRORY OF JAVASCRIPT</h1>
+      <P>JavaScript was invented by Brendan Eich in 1995.<br> It was developed for Netscape 2, and became the ECMA-262
+        standard in 1997<br>After Netscape handed JavaScript over to ECMA, the Mozilla foundation continued to
+        develop
+        JavaScript for the Firefox browser. Mozilla's latest version was 1.8.5. (Identical to ES5)<br>Internet
+        Explorer
+        (IE4) was the first browser to support ECMA-262 Edition 1 (ES1).</P>
+      <p> - ECMAScript 1: Released in 1997, it was the first standardized version of JavaScript.
+        - ECMAScript 2-5: These versions introduced various improvements and bug fixes to the language.
+        - ECMAScript 6 (ES6): Released in 2015, it brought significant changes and new features to JavaScript, such
+        as arrow functions, classes, modules, and let/const for block scoping.</p>
+    </div>
+
+
+    <h1 style="margin-top: 10px; width: fit-content; margin: auto; margin-top: 5%;">Difference between java and
+      Javascript</h1>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" style="background-color: aqua;">#</th>
+          <th scope="col" style="background-color: aqua;">Java</th>
+          <th scope="col" style="background-color: deepskyblue;">Javascript</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row" style="background-color: aqua;">1</th>
+          <td style="background-color: aqua;">
+            <h6>Java has a specific programming languge.where in java <br>variables should be proclaimed
+              first
+              to use in program .java<br>variables are checked at an incompetence time </h6>
+          </td>
+          <td colspan="2" style="background-color:deepskyblue;">
+            <h6>Javascript is a a pitifully composed Javascript Factors<br>can be Statically
+              Typed,Powerfully
+              composed,and feebly<br>composed </h6>
+          </td>
+
+        </tr>
+        <tr>
+          <th scope="row" style="background-color: aqua;">2</th>
+          <td style="background-color: aqua;">
+            <h6>Java is upheld by most Working frameworks </h6>
+          </td>
+          <td colspan="2" style="background-color: deepskyblue;">
+            <h6>Javascript is upheld by the vast majority of the internet<br>browser that accompany diverse
+              Working Frameworks. </h6>
+          </td>
+
+        </tr>
+        <tr>
+          <th scope="row" style="background-color: aqua;">3</th>
+          <td style="background-color: aqua;">
+            <h6>Java code should be aggregated and permit full usefulfulnees to<br> the software engineer
+            </h6>
+          </td>
+          <td colspan="2" style="background-color: deepskyblue;">
+            <h6>Javascript code permit just a set number of component and orders</h6>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row" style="background-color: aqua;">4</th>
+          <td style="background-color: aqua;">
+            <h6>A specific languge in which variables are checked at an arranged time </h6>
+          </td>
+          <td colspan="2" style="background-color: deepskyblue;">
+            <h6>A feebly composed languge that has alot of loosened , up<br>rules and orders </h6>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row" style="background-color: aqua;">5</th>
+          <td style="background-color: aqua;">
+            <h6>The java utilized byte code for accomplishing the stage Freedom ideas </h6>
+          </td>
+          <td colspan="2" style="background-color: deepskyblue;">
+            <h6>it is straightforward runs on the program, however,codes Written in Javascript are dependent
+              upon program similarrity issuses for example certain codes that work in mozilla firefox,may
+              not
+              work in internet expplorer 7 or 8 </h6>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="table" style="margin-top: 5%;">
+      <thead>
+        <tr>
+          <th style="background-color: red;" scope="col">#</th>
+          <th style="background-color: red;" scope="col">Single</th>
+          <th style="background-color: red;" scope="col">Double </th>
+          <th style="background-color: red;" scope="col">Backsticks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th style="background-color: red;" scope="row">1</th>
+          <td style="background-color: red;">Single Quotes (''):
+            - Single quotes are used to declare strings in JavaScript.
+            - Example: `let name = 'John';</td>
+          <td style="background-color: red;"> Double Quotes (""):
+            - Double quotes are also used to declare strings in JavaScript.
+            - Example: `let message = "Hello, world!</td>
+          <td style="background-color: red;">Backticks (``):
+            - Backticks are used for template literals in JavaScript.
+            - They allow for string interpolation and multiline strings.
+            - Example:
+            javascript
+            let name = 'John';
+            let greeting = `Hello, ${name}!`;</td>
+
+        </tr>
+        <tr>
+          <th style="background-color: red;" scope="row">2</th>
+          <td style="background-color: red;">Single quotes can make your code more readable, especially when
+            you have a lot of strings or when
+            you need to include double quotes within the string. It can help differentiate between the
+            string
+            itself and any double quotes used within it </td>
+          <td style="background-color: red;">Double quotes allow for easy inclusion of single quotes within
+            the string without the need for
+            escape characters. This can be useful when you have a string that contains contractions or
+            possessive forms.</td>
+          <td style="background-color: red;">Backticks are used to create template literals, which are a more
+            flexible way of defining strings in
+            JavaScript. Template literals allow you to include placeholders (${expression}) within the
+            string,
+            making it easier to dynamically insert variables or expressions into the string.</td>
+        </tr>
+        <tr>
+          <th style="background-color: red;" scope="row">3</th>
+          <td style="background-color: red;">Single quotes are simple and straightforward to type, especially
+            on keyboards where the single quote
+            key is more accessible than the double quote key.</td>
+          <td style="background-color: red;">If you're working with HTML or CSS code that requires the use of
+            double quotes for attribute values,
+            using double quotes in JavaScript strings can help maintain consistency across your codebase
+          </td>
+          <td style="background-color: red;">With backticks, you can directly embed variables or expressions
+            within the string using
+            ${expression}. This makes it easier to construct complex strings by combining static text with
+            dynamic values.</td>
+        </tr>
+
+      </tbody>
+    </table>
+
+1
+
   </div>
 
-
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item"><a class="page-link" href="eed.HTML">Previous</a></li>
+      <li class="page-item"><a class="page-link" href="index.html">1</a></li>
+      <li class="page-item"><a class="page-link" href="eed.HTML">2</a></li>
+      <li class="page-item"><a class="page-link" href="dfd.html">3</a></li>
+      <li class="page-item"><a class="page-link" href="index.html">Next</a></li>
+    </ul>
+  </nav>
 
 
 

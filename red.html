@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #gen {
+
+        width: fit-content;
+        margin: auto;
+        background-color: red;
+        border: none;
+        text-align: center;
+        padding: 70px;
+        border-radius: 20px;
+    }
+
+  #num, input {
+        height: 9vh;
+        width: 70%;
+        border: none;
+        border-radius: 5px 5px 5px 5px;
+    }
+
+   #newgame {
+        width: 70%;
+        height: 9vh;
+        border: none;
+        border-radius: 5px 5px 5px 5px;
+        background-color: blue;
+    }
+
+    button:hover {
+        background-color: chartreuse;
+    }
+
+    #newgame {
+        display: none;
+    }
+    #pol{
+      border: 1px solid red;
+      background-color: grey;
+      border: none;
+      border-radius: 10px;
+      width: fit-content;
+      text-align: center;
+      margin-left: 30%;
+   }
+   #pol{
+       animation-name: baba;
+        animation-duration: 3s;
+        animation-timing-function: linear;
+        animation-delay: 5s;
+        animation-iteration-count: infinite;
+        animation-direction: forwards;
+   }
+   @keyframes baba {
+      from{
+         background-image: url(img/down\ \(4\).jpg);
+      }
+      to{
+         background-image: url(img/down\ \(2\).jpg);
+      }
+   }
+</style>
+
+<body>
+    <!-- guess number game -->
+    <div id="gen">
+        <h1>Guesing a secret <br> Number </h1>
+        <marquee behavior="" direction="" style="font-size: 20px;">Guessing a secret Number</marquee>
+        <input type="text" placeholder="number 1" id="num" style="visibility: visible;position: relative;"><br><br>
+        <span id="raty"></span><br><br>
+        <button onclick="ade()">Check</button><br><br>
+        <button onclick="newgame()" id="newgame">play again</button>
+        <h3>Hishest score: <span id="h3">0</span> </h3>
+    </div>
+    <script>
+
+        let p = new Date().getDay();
+        let o = ['sunday', 'monday', 'Tuesday', 'Wesdnesday', 'Thurday', 'Friday', 'Saturday']
+        alert(`Today is ${o[p]}`)
+
+        let num;
+        let raty;
+
+        let secrectNumber = Math.trunc(Math.random() * 25) + 10;
+        console.log(`number-${secrectNumber}`);
+
+
+        let Hishestscore = document.querySelector('#h3');
+        let score = 30;
+        let hscore = 0;
+
+
+
+        function gameover() {
+            score = score - 6;   
+            console.log(`score-${score}`);
+
+            if (score == 0) {
+                document.querySelector('#num').style.visibility = 'hidden';
+                document.querySelector('#num').style.position = 'absolute';
+                raty.innerHTML = `Game over <br>The number was ${secrectNumber}`;
+                raty.style.color = `white`;
+                raty.style.fontSize = `50px`;
+                gen.style.backgroundColor = 'blue';
+                gen.style.color = 'white'
+
+            }
+        }
+        function newgame() {
+            const newgamebutton = document.querySelector('#newgame');
+            newgamebutton.addEventListener('click', function () {
+
+            })
+
+        }
+
+
+
+
+        function ade() {
+            num = document.querySelector('#num').value;
+            raty = document.querySelector('#raty');
+
+            if (!num || isNaN(num)) {
+                raty.innerHTML = 'invalid number';
+                gameover();
+                gen.style.backgroundColor = 'gold'
+
+            }
+            else if (num < secrectNumber) {
+                raty.innerHTML = 'You  guess is  low';
+                raty.style.fontSize = '50px'
+                raty.style.color = 'white'
+                gameover();
+            }
+            else if (num > secrectNumber) {
+                raty.innerHTML = 'Your number is high';
+                raty.style.color = 'gold';
+                raty.style.fontSize = '50px'
+                gameover();
+
+            }
+
+            else if (num == secrectNumber) {
+                raty.innerHTML = 'You are correct 👏👏';
+                raty.style.color = 'white';
+                raty.style.backgroundColor = 'green';
+                raty.style.fontSize = '50px'
+                gen.style.backgroundColor = 'green'
+                if (score > hscore) {
+                    Hishestscore.innerHTML = `${score}`
+                }
+            }
+
+
+        }
+
+    </script>
+     <!-- investment caculator -->
+   <div id="pol">
+    <h1>Investment caculator</h1>
+    <label for="text">Amout To Invest</label><br><br>
+    <input type="text" id="Amount"><br><br>
+    <label for="time">Time</label><br><br>
+    <select style="width: 150px;" id="time">
+       <option value="1">1 monthly</option>
+       <option value="2">2 monthly</option>
+       <option value="3">3 monthly</option>
+       <option value="4">4 monthly</option>
+       <option value="5">5 monthly</option>
+       <option value="6">6 monthly</option>
+       <option value="7">7 monthly</option>
+       <option value="8">8 monthly</option>
+       <option value="9">9 monthly</option>
+       <option value="10">10 monthly</option>
+       <option value="12">12 monthly</option>
+       <option>1 Year</option>
+       <option>2 Year</option>
+    </select><br><br>
+
+    <button onclick="answer()"
+       style=" color: blue; border: none;border-radius: 5px; width: 100px;">Caculate</button>
+    <p> Amount: <span id="output1"></span></p>
+    <p>Total Interest:<span id="output2"></span></p>
+    <p>Total value:<span id="output3"></span></p>
+ </div>
+      <script>
+        let Amount, time, Total, Interest, output1, output2, output3;
+  
+  
+        function answer() {
+           Amount = +(document.querySelector('#Amount').value);
+           time = +(document.querySelector('#time').value);
+           rate = 0.15;
+  
+           Interest = Amount * rate * time;
+           console.log(Interest);
+           Total = Interest + Amount;
+           console.log(Total);
+  
+           document.getElementById("output1").innerHTML = Amount;
+           document.getElementById("output2").innerHTML = '15%';
+           document.getElementById("output3").innerHTML = Total;
+  
+        }
+     </script>
+    
+
+
+</body>
+
+</html>
