@@ -2,217 +2,249 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
 </head>
 <style>
-    #gen {
+  #countdown {
+    color: red;
+    font-size: 50px;
+    text-align: center;
+  }
 
-        width: fit-content;
-        margin: auto;
-        background-color: red;
-        border: none;
-        text-align: center;
-        padding: 70px;
-        border-radius: 20px;
-    }
+  #juk {
+    display: none;
+    position: absolute;
 
-  #num, input {
-        height: 9vh;
-        width: 70%;
-        border: none;
-        border-radius: 5px 5px 5px 5px;
-    }
+  }
 
-   #newgame {
-        width: 70%;
-        height: 9vh;
-        border: none;
-        border-radius: 5px 5px 5px 5px;
-        background-color: blue;
-    }
+  #sub {
+    visibility: hidden;
+    position: absolute;
 
-    button:hover {
-        background-color: chartreuse;
-    }
-
-    #newgame {
-        display: none;
-    }
-    #pol{
-      border: 1px solid red;
-      background-color: grey;
-      border: none;
-      border-radius: 10px;
-      width: fit-content;
-      text-align: center;
-      margin-left: 30%;
-   }
-   #pol{
-       animation-name: baba;
-        animation-duration: 3s;
-        animation-timing-function: linear;
-        animation-delay: 5s;
-        animation-iteration-count: infinite;
-        animation-direction: forwards;
-   }
-   @keyframes baba {
-      from{
-         background-image: url(img/down\ \(4\).jpg);
-      }
-      to{
-         background-image: url(img/down\ \(2\).jpg);
-      }
-   }
+  }
+  #bool{
+    text-align: center;
+     border: 5px solid black;
+     background-color: grey;
+     width: fit-content;
+     border: none;
+     margin: auto;
+  }
 </style>
 
 <body>
-    <!-- guess number game -->
-    <div id="gen">
-        <h1>Guesing a secret <br> Number </h1>
-        <marquee behavior="" direction="" style="font-size: 20px;">Guessing a secret Number</marquee>
-        <input type="text" placeholder="number 1" id="num" style="visibility: visible;position: relative;"><br><br>
-        <span id="raty"></span><br><br>
-        <button onclick="ade()">Check</button><br><br>
-        <button onclick="newgame()" id="newgame">play again</button>
-        <h3>Hishest score: <span id="h3">0</span> </h3>
-    </div>
-    <script>
+  <div id="bool">
+    <h1>HOTEL BOOKING</h1>
+    <select id="sct" style="width: 150px;" onclick="fop()">
+      <option value="0">CHOOSE</option>
+      <option value="1">public</option>
+      <option value="2">hotel</option>
+    </select>
+    <h1 id="get"></h1>
+    <div id="juk">
 
-        let p = new Date().getDay();
-        let o = ['sunday', 'monday', 'Tuesday', 'Wesdnesday', 'Thurday', 'Friday', 'Saturday']
-        alert(`Today is ${o[p]}`)
-
-        let num;
-        let raty;
-
-        let secrectNumber = Math.trunc(Math.random() * 25) + 10;
-        console.log(`number-${secrectNumber}`);
-
-
-        let Hishestscore = document.querySelector('#h3');
-        let score = 30;
-        let hscore = 0;
-
-
-
-        function gameover() {
-            score = score - 6;   
-            console.log(`score-${score}`);
-
-            if (score == 0) {
-                document.querySelector('#num').style.visibility = 'hidden';
-                document.querySelector('#num').style.position = 'absolute';
-                raty.innerHTML = `Game over <br>The number was ${secrectNumber}`;
-                raty.style.color = `white`;
-                raty.style.fontSize = `50px`;
-                gen.style.backgroundColor = 'blue';
-                gen.style.color = 'white'
-
-            }
-        }
-        function newgame() {
-            const newgamebutton = document.querySelector('#newgame');
-            newgamebutton.addEventListener('click', function () {
-
-            })
-
-        }
-
-
-
-
-        function ade() {
-            num = document.querySelector('#num').value;
-            raty = document.querySelector('#raty');
-
-            if (!num || isNaN(num)) {
-                raty.innerHTML = 'invalid number';
-                gameover();
-                gen.style.backgroundColor = 'gold'
-
-            }
-            else if (num < secrectNumber) {
-                raty.innerHTML = 'You  guess is  low';
-                raty.style.fontSize = '50px'
-                raty.style.color = 'white'
-                gameover();
-            }
-            else if (num > secrectNumber) {
-                raty.innerHTML = 'Your number is high';
-                raty.style.color = 'gold';
-                raty.style.fontSize = '50px'
-                gameover();
-
-            }
-
-            else if (num == secrectNumber) {
-                raty.innerHTML = 'You are correct 👏👏';
-                raty.style.color = 'white';
-                raty.style.backgroundColor = 'green';
-                raty.style.fontSize = '50px'
-                gen.style.backgroundColor = 'green'
-                if (score > hscore) {
-                    Hishestscore.innerHTML = `${score}`
-                }
-            }
-
-
-        }
-
-    </script>
-     <!-- investment caculator -->
-   <div id="pol">
-    <h1>Investment caculator</h1>
-    <label for="text">Amout To Invest</label><br><br>
-    <input type="text" id="Amount"><br><br>
-    <label for="time">Time</label><br><br>
-    <select style="width: 150px;" id="time">
-       <option value="1">1 monthly</option>
-       <option value="2">2 monthly</option>
-       <option value="3">3 monthly</option>
-       <option value="4">4 monthly</option>
-       <option value="5">5 monthly</option>
-       <option value="6">6 monthly</option>
-       <option value="7">7 monthly</option>
-       <option value="8">8 monthly</option>
-       <option value="9">9 monthly</option>
-       <option value="10">10 monthly</option>
-       <option value="12">12 monthly</option>
-       <option>1 Year</option>
-       <option>2 Year</option>
-    </select><br><br>
-
-    <button onclick="answer()"
-       style=" color: blue; border: none;border-radius: 5px; width: 100px;">Caculate</button>
-    <p> Amount: <span id="output1"></span></p>
-    <p>Total Interest:<span id="output2"></span></p>
-    <p>Total value:<span id="output3"></span></p>
- </div>
-      <script>
-        let Amount, time, Total, Interest, output1, output2, output3;
-  
-  
-        function answer() {
-           Amount = +(document.querySelector('#Amount').value);
-           time = +(document.querySelector('#time').value);
-           rate = 0.15;
-  
-           Interest = Amount * rate * time;
-           console.log(Interest);
-           Total = Interest + Amount;
-           console.log(Total);
-  
-           document.getElementById("output1").innerHTML = Amount;
-           document.getElementById("output2").innerHTML = '15%';
-           document.getElementById("output3").innerHTML = Total;
-  
-        }
-     </script>
+      <label for="" value="0" id="pic">pick how many days you want to stay long</label><br><br>
+      <input type="text" placeholder="input how many days you want to stay long ok" id="yal"><br><br>
+      <div>
+        <h3 id="idk" style="text-align: center;"></h3><br>
+        <select id="sec" style="width: 150px;">
+          
+          <option value="choose">CHOOSE A ROOM</option>
+          <option value="option1">Classic suite {#10 per night}</option>
+          <option value="option2">Emerald suite {#40 per night}</option>
+          <option value="option3">suite {#50 per night}</option>
+        </select><br>
+      
+      </div>
+    </div><br>
+    <h3 id="ans"></h3>
+    <button id="sub" onclick="val()">SUBMIT</button>
     
+  </div>
+
+  <h4 id="countdown"></h4>
+
+  <script>
+    let sct = document.getElementById('sct');
+    let juk = document.getElementById('juk');
+
+    let get = document.getElementById('get');
+    let bul = document.getElementById('bul');
+    let sub = document.getElementById('sub');
 
 
+
+    function fop() {
+      if (sct.value == '2') {
+        juk.style.display = ' inline-block';
+        juk.style.position = 'relative';
+        sub.style.visibility = 'visible'
+        sub.style.position = 'relative'
+
+
+      }
+      else {
+        juk.style.display = 'none';
+        juk.style.position = 'relative';
+
+      }
+      if (sct.value == '1') {
+        get.innerHTML = 'YOU CAN STAY IN AN HOTEL BESIDE YOUR VILLAGE '
+
+      }
+      else {
+        bul.style.display = 'none';
+      }
+    }
+
+    sec.addEventListener("change", () => {
+      let yal = document.getElementById('yal').value;
+      let idk = document.getElementById('idk');
+      let sec = document.getElementById('sec');
+      let plat = 0;
+      if (sec.value === 'option1' && Number(yal)) {
+        plat = yal * 20000;
+        idk.style.display = ' inline-block'
+        idk.innerHTML = `you will pay ${plat} for classic suite using ${yal}days and`
+
+      }
+      else if (sec.value === 'option2' && Number(yal)) {
+        plat = yal * 20000;
+        idk.style.display = 'inline-block';
+        idk.style.fontWeight = 'bolder'
+        idk.style.color = 'black'
+        idk.innerHTML = `you will pay  ₦${plat} for Emerald suite using ${yal}day(s) `
+      }
+      else if (sec.value === 'option3' && Number(yal)) {
+        plat = yal * 30000;
+        idk.style.display = 'inline-block';
+        idk.style.fontWeight = 'bolder'
+        idk.style.color = 'black'
+        idk.innerHTML = `you will pay  ₦${plat} for  suite using ${yal}day(s) `
+      }
+
+      else {
+        idk.style.display = 'inline-block';
+        idk.style.fontWeight = 'bolder'
+        idk.innerHTML = 'enter how long you will stay in the hotel'
+      }
+    })
+
+    idk.style.display = 'inline-block';
+    idk.style.fontWeight = 'bolder'
+    idk.style.color = 'black'
+    idk.innerHTML = ` choose your interest in the type of room below `
+
+
+    function val() {
+      let del = parseInt(document.getElementById('yal').value);
+
+      let recent = new Date().getTime();
+      let count = 86400000 * del;
+      let distance = Number(recent + count);
+      let idk = document.getElementById('idk');
+      let sec = document.getElementById('sec');
+      let ans = document.getElementById('ans');
+      let sam;
+
+      if (!del || isNaN(del) || sec.value === 'choose') {
+        ans.innerHTML = ' input how long you want to stay in the hotel and choose any type of room'
+        clearInterval(sam);
+      }
+      else {
+        yal.style.visibility = 'hidden';
+        sec.style.visibility = 'hidden';
+        sub.style.visibility = 'hidden';
+        pic.style.visibility ='hidden'
+         ans.style.marginTop = '0px'
+        sam = setInterval(function () {
+          let recent = new Date().getTime();
+          let space = distance - recent;
+          let dayleft = Math.floor(space / (1000 * 60 * 60 * 24));
+          let hourleft = Math.floor((space % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          let minuteleft = Math.floor((space % (1000 * 60 * 60)) / (1000 * 60));
+          let secondleft = Math.floor((space % (1000 * 60)) / 1000);
+
+          ans.innerHTML = ` you rent will expire in ${dayleft} D  ${hourleft} H  ${minuteleft} M ${secondleft}S`;
+        }, 1000)
+
+      }
+    }
+    // let Amount, time, Total, Interest, output1, output2, output3;
+
+    // function answer() {
+    //    Amount = +(document.querySelector('#Amount').value);
+    //    time = +(document.querySelector('#time').value);
+    //    rate = 0.15;
+
+    //    Interest = Amount * rate * time;
+    //    console.log(Interest);
+    //    Total = Interest + Amount;
+    //    console.log(Total);
+
+    //    document.getElementById("output1").innerHTML = Amount;
+    //    document.getElementById("output2").innerHTML = '15%';
+    //    document.getElementById("output3").innerHTML = Total;
+
+    // }
+    // setTimeout(()=> console.log('output 1'), 8000);
+    // function answer (what){
+    // console.log('welcome ');
+    // }
+
+    // setInterval(answer,2000,'tunji', 'to class')
+
+    // let timeid = setTimeout(
+    //     function tick(){
+    //         alert('welcome')
+    //         timeid = setTimeout(tick,1000)
+    //     },1000)
+
+    // function printnumber(from,to){
+    //     let current = from;
+    //     function go(){
+    //         alert(current);
+    //         if(current == to){
+    //             clearInterval(timeid)
+    //         }
+    //         else if(current == 15 ){
+    //             alert('welcome')
+    //         }
+    //         current ++
+
+    //     }
+    //     // go();
+    //     let timeid = setInterval(go,1000);
+    // } printnumber(0,15)
+
+    // let bornday = new Date("jan, 24 2024, 11:59 pm").getTime();
+    // let show = document.getElementById("countdown");
+
+    // function birthengine() {
+    //   let currentTime = new Date().getTime();
+    //   let distance = bornday - currentTime;
+    //   console.log("distance");
+
+    //   let dayleft = Math.floor(distance / (1000 * 60 * 60 * 24));
+    //   let hourleft = Math.floor(
+    //     (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    //   );
+    //   let minuteleft = Math.floor(
+    //     (distance % (1000 * 60 * 60)) / (1000 * 60)
+    //   );
+    //   let secondleft = Math.floor((distance % (1000 * 60)) / 1000);
+
+    //   show.innerHTML = `${dayleft} D : ${hourleft} H : ${minuteleft} M: ${secondleft}S`;
+
+    //   if (distance < 0) {
+    //     clearInterval(close);
+    //     show.innerHTML = " HAPPY BIRTHDAY";
+    //   }
+    // }
+    // let close = setInterval(birthengine, 1000);
+  </script>
 </body>
 
 </html>

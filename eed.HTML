@@ -7,7 +7,7 @@
     <title>Document</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
 </head>
 <style>
@@ -58,7 +58,7 @@
 
     }
 
-    div button {
+    .koko {
         margin: 0 4px;
         padding: 6px 6px;
         width: 32px;
@@ -66,9 +66,6 @@
 
     }
 
-    div button:hover {
-        background-color: chartreuse;
-    }
 
     #ded {
         width: 20%;
@@ -116,6 +113,22 @@
         animation-direction: forwards;
     }
 
+    #lod {
+        margin-top: 5%;
+    }
+
+    #shit {
+        margin: 15px 0px;
+    }
+
+    #lod {
+        border: 1px solid grey;
+        background-color: grey;
+        width: fit-content;
+        margin: auto;
+        margin-top: 5%;
+        padding: 5%;
+    }
 
 
     @media screen and(max-width:768px) {
@@ -127,13 +140,44 @@
 
     @keyframes baba {
         from {
-            background-image: url(img/down\ \(4\).jpg)
+            background-image: url(img/down\ \(4\).jpg);
+            transition: all;
         }
 
         to {
             background-image: url(img/down\ \(2\).jpg);
+            transition: all;
         }
     }
+
+    #bool {
+        text-align: center;
+        border: 5px solid black;
+        background-color: grey;
+        width: fit-content;
+        border: none;
+        margin: auto;
+    }
+    body{
+        animation-name: koko;
+        animation-duration: 4s;
+        animation-timing-function:ease-in;
+        animation-delay: 0s;
+        animation-iteration-count: infinite;
+        animation-direction:alternate;
+        animation-play-state: running;
+
+    }
+    /* @keyframes koko {
+        from{
+            background-image: url(img/fisrt\ image.jpg);
+           
+        }
+        to{
+            background-image: url(img/sec\ image.jpg);
+           
+        }
+    } */
 </style>
 
 <body>
@@ -148,10 +192,10 @@
             <input type="text" placeholder="number 1" id="num1"><br>
             <input type="text" placeholder="Number 2" id="num2"><br>
 
-            <button id="add">+</button>
-            <button id="sub">-</button>
-            <button id="mut">x</button>
-            <button id="div">/</button><br>
+            <button id="add" class="koko">+</button>
+            <button id="sub" class="koko">-</button>
+            <button id="mut" class="koko">x</button>
+            <button id="div" class="koko">/</button><br>
             <input id="result" type="text" readonly><br>
         </div>
         <br><br><br><br>
@@ -182,189 +226,318 @@
                 style=" color: blue; border: none;border-radius: 5px; width: 100px;">Caculate</button>
             <p> Amount: <span id="output1"></span></p>
             <p>Total Interest:<span id="output2"></span></p>
-            <p>Total value:<span id="output3"></span></p>
+            <p>Total value:<span id="output3"></span></p><br><br>
+        </div>
 
-            <script>
-                let but = document.querySelectorAll('button');
-                console.log(but)
-                for (let r = 0; r < but.length; r++) {
-                    but[r].addEventListener('click', () => {
-                        let num1 = Number(document.getElementById('num1').value);
-                        let num2 = Number(document.getElementById('num2').value);
-                        let c = document.getElementById('result');
+        <!-- loan caculator -->
+        <div id="lod">
+            <h3 id="">LOAN CALCULATOR</h3><br>
+            <div class="lov">
+                <label for="text">Amount</label><br>
+                <input type="text" id="borrow">
+                <div class="raft">
+                    <div>
+                        <label for="number">select duration</label><br>
+                        <select id="time">
+                            <option value="1">1 MONTH</option>
+                            <option value="2">2 MONTH</option>
+                            <option value="3">3 MONTH</option>
+                            <option value="4">4 MONTH</option>
+                            <option value="5">5 MONTH</option>
+                            <option value="6">6 MONTH</option>
+                            <option value="7">7 MONTH</option>
+                            <option value="8">8 MONTH</option>
+                            <option value="9">9 MONTH</option>
+                            <option value="10">10 MONTH</option>
+                            <option value="11">11 MONTH</option>
+                            <option value="12">12 MONTH</option>
+                        </select>
+                    </div><br>
+                    <div>
+                        <select id="interest">
+                            <option value="0.05">5%</option>
+                            <option value="0.1">10%</option>
+                            <option value="0.15">15%</option>
+                            <option value="0.2">20%</option>
+                            <option value="0.25">25%</option>
+                            <option value="0.3">30% </option>
+                            <option value="0.35">35% </option>
+                            <option value="0.4">40% </option>
+                            <option value="0.45">45% </option>
+                            <option value="0.5">50% </option>
+                        </select>
+                    </div>
+                </div><br>
+                <button id="back" id="shit">
+                    Borrow
+                </button>
+                <h4 id="out"></h4>
+            </div><br><br><br>
 
+        </div><br><br>
 
+        <!-- hotel booking -->
+        <div id="bool">
+            <h1>HOTEL BOOKING</h1>
+            <select id="sct" style="width: 150px;" onclick="fop()">
+                <option value="0">CHOOSE</option>
+                <option value="1">public</option>
+                <option value="2">hotel</option>
+            </select>
+            <h1 id="get"></h1>
+            <div id="juk">
 
-                        if (but[r].id == 'add') {
-                            c.value = num1 + num2;
-                        }
+                <label for="" value="0" id="pic">pick how many days you want to stay long</label><br><br>
+                <input type="text" placeholder="input how many days you want to stay long ok" id="yal"><br><br>
+                <div>
+                    <h3 id="idk" style="text-align: center;"></h3><br>
+                    <select id="sec" style="width: 150px;">
 
-                        else if (but[r].id == 'sub') {
-                            c.value = num1 - num2;
-                        }
+                        <option value="choose">CHOOSE A ROOM</option>
+                        <option value="option1">Classic suite {#10 per night}</option>
+                        <option value="option2">Emerald suite {#40 per night}</option>
+                        <option value="option3">suite {#50 per night}</option>
+                    </select><br>
 
-                        else if (but[r].id == 'mut') {
-                            c.value = num1 * num2;
-                        }
-                        else if (but[r].id == 'div') {
-                            c.value = num1 / num2;
-                        }
-                    })
-
-                }
-
-
-
-
-
-
-
-                function mar() {
-                    let a = prompt("input your birth year ");
-                    const b = new Date().getFullYear();
-                    let c = b - a
-                    let retire = 65 - c
-
-                    if (!a || isNaN(a)) {
-                        alert(`input a year`)
-                    }
-
-                    else if (a <= 1958) {
-                        alert(`You are old enough plz go and retire`)
-                    }
-                    else if (a > b) {
-                        alert(`invalid year`)
-                    }
-                    else {
-                        alert(`you have  ${retire} years to retire from civil service work `)
-                    }
-                }
-
-                //   interest caculator
-
-                let Amount, time, Total, Interest, output1, output2, output3;
-
-
-                function answer() {
-                    Amount = +(document.querySelector('#Amount').value);
-                    time = +(document.querySelector('#time').value);
-                    rate = 0.15;
-
-                    Interest = Amount * rate * time;
-                    console.log(Interest);
-                    Total = Interest + Amount;
-                    console.log(Total);
-
-                    document.getElementById("output1").innerHTML = Amount;
-                    document.getElementById("output2").innerHTML = '15%';
-                    document.getElementById("output3").innerHTML = Total;
-                }
-                // let b, c, d;
-
-                // function add() {
-                //     a = + document.getElementById("num1").value;
-                //     b = + document.getElementById("num2").value;
-                //     c = document.getElementById("result");
-                //     d = a + b
-                //     c.value = d
-
-                //     if (!(a) || isNaN(b)) {
-                //         alert(`invalid number`)
-
-                //     }
-
-                // }
-                // function sub() {
-                //     a = + document.getElementById("num1").value;
-                //     b = + document.getElementById("num2").value;
-                //     c = document.getElementById("result");
-                //     d = a - b
-                //     c.value = d
-
-                //     if (!(a) || isNaN(b)) {
-                //         alert(`invalid number`)
-
-                //     }
-
-                // }
-                // function mut() {
-                //     let a = + document.getElementById("num1").value;
-                //     let b = + document.getElementById("num2").value;
-                //     let c = document.getElementById("result");
-                //     let d = a * b
-                //     c.value = d
-                //     if (!(a) || isNaN(b)) {
-                //         alert(`invalid number`)
-
-                //     }
-
-                // }
-                // function div() {
-                //     a = + document.getElementById("num1").value;
-                //     b = + document.getElementById("num2").value;
-                //     c = document.getElementById("result");
-                //     d = a / b
-                //     c.value = d
-                //     if (!(a) || isNaN(b)) {
-                //         alert(`invalid number`)
-
-                //     }
-
-                // }
-
-
-
-
-
-
-
-            </script>
-
-
-
-
-
-            <!-- // var n1 = document.getElementById("num1");
-            // var n2 = document.getElementById("num2");
-            // var res = document.getElementById("result");
-
-            // document.getElementById("add").addEventListener
-            //     ("click", function () {
-            //         res.value =
-            //             parseInt(n1.value) + parseInt(n2.value);
-            //     });
-            // document.getElementById("sub").addEventListener
-            //     ("click", function () {
-            //         res.value =
-            //             parseInt(n2.value) - parseInt(n1.value);
-            //     });
-            // document.getElementById("mut").addEventListener
-            //     ("click", function () {
-            //         res.value =
-            //             parseInt(n1.value) * parseInt(n2.value);
-            //     });
-            // document.getElementById("div").addEventListener
-            //     ("click", function () {
-            //         res.value =
-            //             parseInt(n1.value) / parseInt(n2.value);
-            //     }); -->
-
-
-
-
+                </div>
+            </div><br>
+            <h3 id="ans"></h3>
+            <button id="sub" onclick="val()">SUBMIT</button>
 
         </div>
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
-                <li class="page-item"><a class="page-link" href="index.html">Previous</a></li>
-                <li class="page-item"><a class="page-link" href="index.html">1</a></li>
-                <li class="page-item"><a class="page-link" href="eed.HTML">2</a></li>
-                <li class="page-item"><a class="page-link" href="dfd.html">3</a></li>
-                <li class="page-item"><a class="page-link" href="dfd.html">Next</a></li>
-            </ul>
-        </nav>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+
+        <script>
+
+
+            let gret = new Date().getHours();
+            if (gret > 0 && gret < 12) {
+                alert('Good morning');
+            }
+            else if (gret > 12 && gret < 16) {
+                alert('Good Afternoon');
+            }
+            else if (gret > 16 && gret <= 23) {
+                alert('Good evening');
+            }
+
+
+
+            let but = document.querySelectorAll('button');
+            console.log(but)
+            for (let r = 0; r < but.length; r++) {
+                but[r].addEventListener('click', () => {
+                    let num1 = Number(document.getElementById('num1').value);
+                    let num2 = Number(document.getElementById('num2').value);
+                    let c = document.getElementById('result');
+
+
+
+                    if (but[r].id == 'add') {
+                        c.value = num1 + num2;
+                    }
+
+                    else if (but[r].id == 'sub') {
+                        c.value = num1 - num2;
+                    }
+
+                    else if (but[r].id == 'mut') {
+                        c.value = num1 * num2;
+                    }
+                    else if (but[r].id == 'div') {
+                        c.value = num1 / num2;
+                    }
+                })
+
+            }
+
+
+
+
+
+
+
+            function mar() {
+                let a = prompt("input your birth year");
+                const b = new Date().getFullYear();
+                let c = b - a
+                let retire = 65 - c
+
+                if (!a || isNaN(a)) {
+                    alert(`input a year`)
+                }
+
+                else if (a <= 1958) {
+                    alert(`You are old enough plz go and retire`)
+                }
+                else if (a > b) {
+                    alert(`invalid year`)
+                }
+                else {
+                    alert(`you have  ${retire} years to retire from civil service work `)
+                }
+            }
+
+            //   interest caculator
+
+            let Amount, time, Total, Interest, output1, output2, output3;
+
+
+            function answer() {
+                Amount = +(document.querySelector('#Amount').value);
+                time = +(document.querySelector('#time').value);
+                rate = 0.15;
+
+                Interest = Amount * rate * time;
+                console.log(Interest);
+                Total = Interest + Amount;
+                console.log(Total);
+
+                document.getElementById("output1").innerHTML = Amount;
+                document.getElementById("output2").innerHTML = '15%';
+                document.getElementById("output3").innerHTML = Total;
+            }
+
+            // Loan caculator
+            document.querySelector('#back').addEventListener("click",
+                function () {
+                    let borrow = Number(document.getElementById('borrow').value);
+                    let interest = document.getElementById('interest').value;
+                    let time = Number(document.getElementById('time').value);
+                    let intrestrate = interest * borrow;
+                    let repay = Number((intrestrate) / time) + Number(borrow);
+                    document.getElementById('out').innerHTML = `Your loan repayment will be ${repay} naira
+                , <br>if you borrow ${borrow} amount at  ${interest} interest`
+
+                })
+            // hotel booking
+            let sct = document.getElementById('sct');
+            let juk = document.getElementById('juk');
+
+            let get = document.getElementById('get');
+            let bul = document.getElementById('bul');
+            let sub = document.getElementById('sub');
+
+
+
+            function fop() {
+                if (sct.value == '2') {
+                    juk.style.display = ' inline-block';
+                    juk.style.position = 'relative';
+                    sub.style.visibility = 'visible'
+                    sub.style.position = 'relative'
+
+
+                }
+                else {
+                    juk.style.display = 'none';
+                    juk.style.position = 'relative';
+
+                }
+                if (sct.value == '1') {
+                    get.innerHTML = 'YOU CAN STAY IN AN HOTEL BESIDE YOUR VILLAGE '
+
+                }
+
+            }
+
+            sec.addEventListener("change", () => {
+                let yal = document.getElementById('yal').value;
+                let idk = document.getElementById('idk');
+                let sec = document.getElementById('sec');
+                let plat = 0;
+                if (sec.value === 'option1' && Number(yal)) {
+                    plat = yal * 20000;
+                    idk.style.display = ' inline-block'
+                    idk.innerHTML = `you will pay ${plat} for classic suite using ${yal}days and`
+
+                }
+                else if (sec.value === 'option2' && Number(yal)) {
+                    plat = yal * 20000;
+                    idk.style.display = 'inline-block';
+                    idk.style.fontWeight = 'bolder'
+                    idk.style.color = 'black'
+                    idk.innerHTML = `you will pay  ₦${plat} for Emerald suite using ${yal}day(s) `
+                }
+                else if (sec.value === 'option3' && Number(yal)) {
+                    plat = yal * 30000;
+                    idk.style.display = 'inline-block';
+                    idk.style.fontWeight = 'bolder'
+                    idk.style.color = 'black'
+                    idk.innerHTML = `you will pay  ₦${plat} for  suite using ${yal}day(s) `
+                }
+
+                else {
+                    idk.style.display = 'inline-block';
+                    idk.style.fontWeight = 'bolder'
+                    idk.innerHTML = 'enter how long you will stay in the hotel'
+                }
+            })
+
+            idk.style.display = 'inline-block';
+            idk.style.fontWeight = 'bolder'
+            idk.style.color = 'black'
+            idk.innerHTML = ` choose your interest in the type of room below `
+
+
+            function val() {
+                let del = parseInt(document.getElementById('yal').value);
+
+                let recent = new Date().getTime();
+                let count = 86400000 * del;
+                let distance = Number(recent + count);
+                let idk = document.getElementById('idk');
+                let sec = document.getElementById('sec');
+                let ans = document.getElementById('ans');
+                let sam;
+
+                if (!del || isNaN(del) || sec.value === 'choose') {
+                    ans.innerHTML = ' input how long you want to stay in the hotel and choose any type of room'
+                    clearInterval(sam);
+                }
+                else {
+                    yal.style.visibility = 'hidden';
+                    sec.style.visibility = 'hidden';
+                    sub.style.visibility = 'hidden';
+                    pic.style.visibility = 'hidden'
+                    ans.style.marginTop = '0px'
+                    sct.style.visibility = 'hidden'
+                    setInterval(function () {
+                        let recent = new Date().getTime();
+                        let space = distance - recent;
+                        let dayleft = Math.floor(space / (1000 * 60 * 60 * 24));
+                        let hourleft = Math.floor((space % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        let minuteleft = Math.floor((space % (1000 * 60 * 60)) / (1000 * 60));
+                        let secondleft = Math.floor((space % (1000 * 60)) / 1000);
+
+                        ans.innerHTML = ` you rent will expire in ${dayleft} D  ${hourleft} H  ${minuteleft} M ${secondleft}S`;
+                    }, 1000)
+
+                }
+            }
+
+
+
+
+
+
+
+        </script>
+
+
+
+    </div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="index.html">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="index.html">1</a></li>
+            <li class="page-item"><a class="page-link" href="eed.HTML">2</a></li>
+            <li class="page-item"><a class="page-link" href="dfd.html">3</a></li>
+            <li class="page-item"><a class="page-link" href="dfd.html">Next</a></li>
+        </ul>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
 </body>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<style>
+  #btnstart {
+    padding: 7px;
+    border-radius: 5px;
+    border: none;
+    width: 20%;
+    text-align: center;
+    margin-left: 10%;
+  }
+
+  #btnpause {
+    visibility: hidden;
+    padding: 7px;
+    border-radius: 5px;
+    border: none;
+    width: 20%;
+    width: fit-content;
+  }
+
+  #btnstop {
+    visibility: hidden;
+    padding: 7px;
+    border-radius: 5px;
+    border: none;
+    width: 20%;
+    width: fit-content;
+    text-align: center;
+  
+  }
+
+  #btncontinue {
+    visibility: hidden;
+    padding: 7px;
+    border-radius: 5px;
+    border: none;
+    width: 20%;
+    margin-right: 8%;
+
+
+  }
+
+  #btnreset {
+    visibility: hidden;
+    padding: 7px;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+  }
+
+  #SYSTEM {
+    border: 2px solid black;
+    border: none;
+    width: fit-content;
+    background-color: grey;
+    text-align: center;
+  }
+
+  #btn {
+    text-align: center;
+
+  }
+</style>
+
+<body>
+
+  <div id="SYSTEM">
+    <h1>UBER PRICE SYSTEM </h1>
+    <label for="" id="wehh">input where you are leaving now</label><br><br>
+    <input type="text" id="weh" value=""><br><br><br>
+
+    <label for="" id="goo">Enter where you are go To</label><br><br>
+    <input type="text" id="go" value=""><br><br>
+    <div style="display: flex; margin: 1px;" id="btn">
+      <button id="btnstart" style="background-color: blueviolet;">Start</button>
+      <button id="btnpause" style="background-color: gold;">Pause</button>
+      <button id="btncontinue" style="background-color: green">Continue</button>
+      <button id="btnstop" style="background-color: greenyellow;">STOP</button>
+      <button id="btnreset" style="background-color: red;">click for receipt</button>
+    </div>
+    <h5 id="show"></h5>
+    <h5 id="pau"></h5>
+    <span id="play">00:00</span><br /><br />
+    <div style="visibility: hidden;" id="tab">
+      
+        <table>
+            <tr>
+                <td>Base fare</td>
+                <span id="base" ></span>
+            </tr>
+            <tr>
+                <td>Time spent</td>
+                <span id="time" ></span>
+            </tr>
+            <tr>
+                <td> Total</td>
+                <span id="tot"></span>
+            </tr>
+          
+            <tr>
+                <td>Payable amount</td>
+                <span id="payable" ></span>
+            </tr>
+        </table>
+  </div>
+
+  <script>
+    let btnstart = document.getElementById('btnstart');
+    let btnpause = document.getElementById('btnpause');
+    let btnreset = document.getElementById('btnreset');
+    let btncontinue = document.getElementById('btncontinue');
+    let btnstop = document.getElementById('btnstop');
+    let show = document.getElementById('show');
+    let weh = document.getElementById('weh');
+    let go = document.getElementById('go');
+
+
+    let initialize = 0;
+    let minout;
+    let secout;
+    let p;
+
+    function start() {
+      initialize++;
+      let minout = parseInt(initialize / 60);
+      let secout = (initialize % 60);
+      minout = (minout < 10) ? "0" + minout : minout;
+      secout = (secout < 10) ? "0" + secout : secout;
+
+
+      document.getElementById('play').innerHTML = `${minout}: ${secout}`
+
+
+
+
+    }
+    function ded() {
+      p = setInterval(start, 1000)
+      btnpause.style.visibility = 'visible';
+      btnpause.style.position = 'relative';
+      btnstop.style.visibility = 'visible'
+      btnstop.style.position = 'relative';
+      btnstart.style.visibility = 'hidden';
+      btnstart.style.position = 'absolute';
+      play.style.visibility = 'visible'
+      weh.style.display = 'none'
+      go.style.display = 'none'
+      wehh.style.display = 'none'
+      goo.style.display = 'none'
+
+
+      if (weh.value && go.value) {
+      document.getElementById('show').innerHTML = `you are now on your way from ${weh.value} to ${go.value}`
+      }
+      else {
+        alert('input where you are going to and your destination')
+      }
+    }
+
+    function god() {
+      clearInterval(p)
+      btncontinue.style.visibility = 'visible';
+      btncontinue.style.position = 'relative'
+      btnpause.style.visibility = 'hidden'
+
+      show.innerHTML = 'please wait a moment the journey will continue soon be patient'
+
+    }
+    function cont() {
+      p = setInterval(start, 1000);
+      btncontinue.style.visibility = 'hidden';
+      btnpause.style.visibility = 'visible'
+      show.innerHTML = `your journey from ${weh} to ${go} has  continue`
+    }
+    function toop() {
+      clearInterval(p);
+      btnstop.style.visibility = 'hidden'
+      btncontinue.style.visibility = 'hidden'
+      btnreset.style.visibility = 'visible'
+      btnpause.style.visibility = 'hidden'
+      btnreset.style.position = 'relative'
+      show.innerHTML = `your journey from ${weh} to ${go} has now come to End `
+    }
+    function yoot() {
+   clearInterval(p)
+      console.log(p)
+      btnreset.style.visibility = 'hidden';
+      play.style.display = 'none';
+      tab.style.visibility ='visible';
+      show.style.visibility = 'hidden';
+
+
+
+
+
+    }
+
+    btnreset.addEventListener("click", yoot);
+
+    btnstop.addEventListener("click", toop);
+
+    btncontinue.addEventListener("click", cont);
+
+    btnpause.addEventListener('click', god);
+
+    btnstart.addEventListener('click', ded);
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

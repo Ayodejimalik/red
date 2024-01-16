@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -220,9 +221,35 @@
             <input id="result" type="text" readonly><br>
         </div>
         <br><br><br><br>
+        <div>
+            <button onclick="greet()" style="margin-top: 5%;">Greetings</button>
+        </div>
 
         <script>
+              function greet() {
+                let gr = new Date().getHours();
+                if (gr > 0 && gr < 12) {
+                    alert('Good morning')
+                }
+                else if (gr >= 12 && gr < 15) {
+                    alert('Good afternoon')
+                }
+                else if (gr >= 15 && gr <= 23) {
+                    alert('Good evening')
+                }
+            }
 
+
+            let gret = new Date().getHours();
+            if (gret > 0 && gret < 12) {
+                alert('Good morning');
+            }
+            else if (gret > 12 && gret < 16) {
+                alert('Good Afternoon');
+            }
+            else if (gret > 16 && gret <= 23) {
+                alert('Good evening');
+            }
 
 
             let p = new Date().getDay();

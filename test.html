@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     #stat{
+        visibility: visible;
+        padding: 5px;
+        border-radius: 5px;
+          border: none;
+          width: 20%;
+          text-align: center;
+          margin: auto;
+     
+     }
+     #Pause{
+      visibility: hidden;
+      padding: 5px;
+      border-radius: 5px;
+        border: none;
+        width: 20%;
+        text-align: center;
+        margin: auto;
+   
+     }
+      #STOP{
+      visibility: hidden;
+      padding: 5px;
+      border-radius: 5px;
+        border: none;
+        width: 20%;
+        text-align: center;
+        margin: auto;
+       
+
+     }
+     #clear{
+      visibility: hidden;
+      padding: 5px;
+      border-radius: 5px;
+        border: none;
+        width: 20%;
+        text-align: center;
+        margin: auto;
+     }
+     #play{
+      visibility: hidden;
+     }
+     #continue{
+      visibility: hidden;
+
+padding: 5px;
+border-radius: 5px;
+  border: none;
+  width: 20%;
+  text-align: center;
+  margin: auto
+     }
+</style>
+<body>
+    <!-- <h4 id="countdown"></h4>
+    <h3 id="digitaltime"></h3> -->
+
+    <div>
+        <h1>UBER PRICE SYSTEM </h1>
+        <label for="" id="bac">input where you are leaving now</label><br><br>
+        <input type="text" id="weh"><br><br><br>
+    
+        <label for="" id="goo">Enter where you are go To</label><br><br>
+        <input  type="text" id="go"><br><br>
+        <div style="display: flex; margin: 1px;">
+          <button id="stat">Start</button>
+          <button id="Pause">Pause</button>
+          <button id="STOP"> STOP</button>
+          <button id="clear">Click for receipt</button>
+        </div>
+      </div>
+      <h5 id="show"></h5>
+        <span id="play">00:00</span><br /><br />
+    
+    <script>
+         let wen = document.getElementById('weh');
+          let got = document.getElementById('go');
+       let stat = document.getElementById('stat');
+       let pause = document.getElementById('pause');
+       let STOP = document.getElementById('STOP');
+       let clear = document.getElementById('clear');
+        let play = document.getElementById('play');     
+         let show = document.getElementById('show');
+         let pau = document.getElementById('pau');
+         let cont = document.getElementById('continue');
+      
+        let  initialize = 0;
+          let minout;
+          let secout;
+          let p;
+
+
+
+        function start(){
+            initialize ++;
+           let minout = parseInt(initialize/60);
+           let secout = (initialize%60);
+
+           minout = (minout<10)? "0"+minout:minout;
+           secout = (secout<10)? "0"+secout:secout;
+          
+         
+            
+           document.getElementById('show').innerHTML = `you are now on your way from ${wen} to ${got}`;
+           document.getElementById('play').innerHTML = `${minout}: ${secout}`; 
+          }
+  function ded(){
+            p = setInterval(start,1000)
+            Pause.style.visibility = 'visible';
+           Pause.style.position = 'relative';
+           STOP.style.visibility='visible' 
+           STOP.style.position = 'relative';
+          stat.style.visibility = 'hidden';
+           stat.style.position = 'absolute'
+           play.style.visibility = 'visible';
+           play.style.position = 'absolute'
+           weh.style.visibility = 'hidden'
+           go.style.visibility = 'hidden'
+           wehh.style.display = 'none'
+           goo.style.display = 'none'
+           cont.style.display = 'none'
+      
+            
+       
+            
+          }
+
+          function god(){
+            clearInterval(p)
+            cont.style.visibility = 'visible'
+            cont.style.position = 'relative'
+            pause.style.visibility = 'hidden'
+            show.style.visibility = 'hidden'
+            pau.innerHTML = 'pls wait a moment'
+          }
+                 stat.addEventListener('click', ded);
+
+                 pause.addEventListener('click',god);
+        // let a = new Date().getMonth()+1;
+        //  console. log(a);
+
+        //  let close = setInterval(birth,1000)
+
+        //  let bornday = new Date("jan,11,2024, 11:59 pm" ).getTime();
+        //  let fro = document.getElementById('countdown');
+
+        //  function birth(){
+        //   let recent = new Date().getTime();
+        //   let space = bornday-recent;
+
+        //    let dayleft = Math.floor (space /(1000*60*60*24) );
+        //   let hourleft = Math.floor((space % (1000*60*60*24))/(1000*60*60));
+        //   let minuteleft = Math.floor((space % (1000*60*60))/(1000*60));
+        //   let secondleft = Math.floor((space %(1000*60) )/1000);
+
+        //   fro.innerHTML = `${dayleft} D : ${hourleft} H : ${minuteleft} M: ${secondleft}S`;
+        //  }
+ 
+
+        //  function time(){
+        //     let currentTime = new Date();
+        //     let hours = currentTime.getHours();
+        //     let minute = currentTime.getMinutes();
+        //     let second = currentTime.getSeconds();
+        //     let date = 'Am'
+             
+        //     if(hours == 12){
+        //             hours = 12; ""
+        //         }
+        //         if(hours > 12 ){
+        //             hours = hours - 12;
+        //             date = 'pm'; 
+        //         }
+        //         date = (hours>= 12) ? "pm":"AM"
+
+        //         date = (hours>=12)? "0"+hours:hours;
+              
+
+        //     digitaltime.innerHTML = ` ${hours}: ${minute}:${second}`
+         
+          
+        //  }
+
+        // setInterval(time, 1000);
+
+
+        
+    </script>
+</body>
+</html>
