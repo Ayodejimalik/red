@@ -382,12 +382,12 @@
         <!-- uber price -->
         <div id="SYSTEM">
             <h1 id="UBER">UBER PRICE SYSTEM </h1>
-            <label for="" id="wehh">input where you are leaving now</label><br><br>
-            <input type="text" id="weh" value=""oninput= "het()" ><br><br><br>
-            <span id="spat" style="color: red;"></span><br>
+            <label for="" id="wehh">input where you are leaving now</label><br>
+            <input type="text" id="weh" value=""oninput= "validatehet()" ><br>
+            <span id="spat" style="color: red;"></span><br><br>
 
-            <label for="" id="goo">Enter where you are go To</label><br><br>
-            <input type="text" id="go" value="" oninput="hey()"><br><br>
+            <label for="" id="goo">Enter where you are go To</label><br>
+            <input type="text" id="go" value="" oninput="validatehey()"><br>
             <span id="collect" style="color: red;"></span>
             <div id="btn">
                 <button id="btnstart" style="background-color: blueviolet;">Request Ride</button>
@@ -407,7 +407,7 @@
                     </tr>
                     
                     <tr>
-                        <td>Payable amount</td>
+                        <td>Time spent</td>
                         <td id="used"></td>
                     </tr>
                     <tr>
@@ -744,7 +744,8 @@
                 btncontinue.style.visibility = 'visible';
                 btncontinue.style.position = 'relative'
                 btnpause.style.visibility = 'hidden'
-
+                collect.style.display = 'none'
+                spat.style.display = 'none'
                 show.innerHTML = 'please wait a moment the journey will continue soon be patient'
 
             }
@@ -771,7 +772,6 @@
                 tab.style.visibility = 'visible';
                 show.style.visibility = 'hidden';
                 UBER.style.display = 'none';
-                SYSTEM.style.width = '20%';
                 vis.style.alignItems = 'center';
                 vis.style.justifyContent = 'center';
 
