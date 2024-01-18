@@ -180,13 +180,14 @@
            
         }
     } */
+    /* uber */
     #btnstart {
         padding: 7px;
         border-radius: 5px;
         border: none;
-        width: 20%;
-        text-align: center;
-        margin-left: 10%;
+        width: fit-content;
+
+
     }
 
     #btnpause {
@@ -194,8 +195,8 @@
         padding: 7px;
         border-radius: 5px;
         border: none;
-        width: 20%;
         width: fit-content;
+
     }
 
     #btnstop {
@@ -203,9 +204,9 @@
         padding: 7px;
         border-radius: 5px;
         border: none;
-        width: 20%;
         width: fit-content;
-        text-align: center;
+
+
 
     }
 
@@ -214,8 +215,8 @@
         padding: 7px;
         border-radius: 5px;
         border: none;
-        width: 20%;
-        margin-right: 8%;
+        width: fit-content;
+
 
 
     }
@@ -225,8 +226,8 @@
         padding: 7px;
         border-radius: 5px;
         border: none;
-        text-align: center;
-        margin-right: 150px;
+
+
     }
 
     #SYSTEM {
@@ -236,14 +237,15 @@
         align-items: center;
         justify-content: center;
         background-color: grey;
-        margin-left: 35%;
+        margin: auto;
     }
 
     #btn {
-        text-align: center;
-        margin: 1px;
+
+        width: 100%;
         display: flex;
         align-items: center;
+        justify-content: center;
     }
 
     #vis {
@@ -381,10 +383,12 @@
         <div id="SYSTEM">
             <h1 id="UBER">UBER PRICE SYSTEM </h1>
             <label for="" id="wehh">input where you are leaving now</label><br><br>
-            <input type="text" id="weh" value=""><br><br><br>
+            <input type="text" id="weh" value=""oninput= "het()" ><br><br><br>
+            <span id="spat" style="color: red;"></span><br>
 
             <label for="" id="goo">Enter where you are go To</label><br><br>
-            <input type="text" id="go" value=""><br><br>
+            <input type="text" id="go" value="" oninput="hey()"><br><br>
+            <span id="collect" style="color: red;"></span>
             <div id="btn">
                 <button id="btnstart" style="background-color: blueviolet;">Request Ride</button>
                 <button id="btnpause" style="background-color: gold;">Pause</button>
@@ -393,7 +397,6 @@
                 <button id="btnreset" style="background-color: red;"> receipt</button>
             </div>
             <h5 id="show"></h5>
-            <h5 id="pau"></h5>
             <span id="play">00:00</span><br /><br />
             <div style="visibility: hidden;" id="tab">
 
@@ -402,9 +405,10 @@
                         <td>Base fare</td>
                         <td id="base"></td>
                     </tr>
+                    
                     <tr>
-                        <td>Time spent</td>
-                        <td id="time"></td>
+                        <td>Payable amount</td>
+                        <td id="used"></td>
                     </tr>
                     <tr>
                         <td> Total Amount</td>
@@ -650,6 +654,11 @@
             let UBER = document.getElementById('UBER');
             let SYSTEM = document.getElementById('SYSTEM');
             let vis = document.getElementById('vis');
+            let het = document.getElementById('het');
+            let hey = document.getElementById('hey');
+            let spat = document.getElementById('spat');
+            let collect = document.getElementById('collect');
+
 
             let fare = document.getElementById('base');
             let spent = document.getElementById('time');
@@ -658,9 +667,36 @@
             let pay = document.getElementById('payable');
 
 
-
             let initialize = 0;
-            let minout, secout, p, basefare, timefare, cal, taxrate, amount;
+            let minout, secout, p, basefare, timefare, cal, taxrate, amount, begin1, begin2;
+
+            function validatehet() {
+                if (!weh.value || !isNaN(weh.value)) {
+                    spat.innerHTML = ' invalid  input'
+                    begin1 = false;
+
+                }
+                else {
+                    spat.innerHTML = " ";
+                    begin1 = true;
+                }
+            }
+
+
+
+
+            function validatehey() {
+                if (!go.value || !isNaN(go.value)) {
+                    collect.innerHTML = 'invalid input'
+                    begin2 = false;
+
+                }
+                else {
+                    collect.innerHTML = " ";
+                    begin2 = true;
+                }
+            }
+
 
 
             function start() {
@@ -677,21 +713,28 @@
 
             }
             function ded() {
-                p = setInterval(start, 1000)
-                btnpause.style.visibility = 'visible';
-                btnpause.style.position = 'relative';
-                btnstop.style.visibility = 'visible'
-                btnstop.style.position = 'relative';
-                btnstart.style.visibility = 'hidden';
-                play.style.visibility = 'visible'
-                weh.style.display = 'none'
-                go.style.display = 'none'
-                wehh.style.display = 'none'
-                goo.style.display = 'none'
 
-                if (weh.value.trim() !== '' && go.value.trim() !== '') {
+
+                if (weh.value && go.value) {
+                    p = setInterval(start, 1000)
+                    btnpause.style.visibility = 'visible';
+                    btnpause.style.position = 'relative';
+                    btnstop.style.visibility = 'visible'
+                    btnstop.style.position = 'relative';
+                    btnstart.style.visibility = 'hidden';
+                    play.style.visibility = 'visible'
+                    weh.style.display = 'none'
+                    go.style.display = 'none'
+                    wehh.style.display = 'none'
+                    goo.style.display = 'none'
                     show.innerHTML = `You are now on your way from ${weh.value} to ${go.value}`;
-                } else {
+                }
+
+                else {
+                    weh.style.display = 'inline-block'
+                    go.style.display = 'inline-block'
+                    validatehet();
+                    validatehey();
                     alert('Please input where you are going to and your destination.');
                 }
             }
@@ -732,15 +775,20 @@
                 vis.style.alignItems = 'center';
                 vis.style.justifyContent = 'center';
 
+
+                minout = +(minout);
+                secout = +(secout);
+                document.getElementById('used').innerHTML=`${minout} : ${secout}`;
+                
                 basefare = 1000;
-                secout = secout / 60;
-                timefare = Math.trunc((minout + secout) * 100);
+                
+                timefare = Math.floor((minout + secout / 60) * 20);
                 cal = Math.trunc(basefare + timefare);
                 taxrate = Math.trunc(cal * 0.10);
                 amount = Math.trunc(taxrate + cal);
 
                 fare.innerHTML = `: ${basefare}`;
-                spent.innerHTML = `: ${timefare}`;
+                // spent.innerHTML = `: ${timefare}`;
                 caculate.innerHTML = `: ${cal}`;
                 rate.innerHTML = `:  ${taxrate}`;
                 pay.innerHTML = `: ${amount}`;
