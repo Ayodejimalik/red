@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+  <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> 
 </head>
 <style>
      #stat{
@@ -59,12 +60,17 @@ border-radius: 5px;
   text-align: center;
   margin: auto
      }
+     #battery{
+      font-weight: bolder;
+      font-size: 50px;
+
+     }
 </style>
 <body>
     <!-- <h4 id="countdown"></h4>
     <h3 id="digitaltime"></h3> -->
 
-    <div>
+    <!-- <div>
         <h1>UBER PRICE SYSTEM </h1>
         <label for="" id="bac">input where you are leaving now</label><br><br>
         <input type="text" id="weh"><br><br><br>
@@ -79,72 +85,92 @@ border-radius: 5px;
         </div>
       </div>
       <h5 id="show"></h5>
-        <span id="play">00:00</span><br /><br />
-    
+        <span id="play">00:00</span><br /><br /> -->
+<!-- 
+        <img src="img/fisrt image.jpg" style="width: 50px;">
+         <button onclick="frame()">Start</button><br> -->
+     
+
+       <div id="mynewid" >
+      <input type="text"id="wen">
+      <ul id="to"  style="background-color: gold;" >
+        <li>balil</li>
+        <li>malik</li>
+      </ul>
+
+
+
+        <button onclick="man()">New Year</button>
+       </div>
+
+      
+
+         <i class="fa-solid " id= "battery"></i>
     <script>
-         let wen = document.getElementById('weh');
-          let got = document.getElementById('go');
-       let stat = document.getElementById('stat');
-       let pause = document.getElementById('pause');
-       let STOP = document.getElementById('STOP');
-       let clear = document.getElementById('clear');
-        let play = document.getElementById('play');     
-         let show = document.getElementById('show');
-         let pau = document.getElementById('pau');
-         let cont = document.getElementById('continue');
-      
-        let  initialize = 0;
-          let minout;
-          let secout;
-          let p;
+        function man(){
+          let wen = document.getElementById('wen').value;
+           let to =document.getElementById('to');
+           
+            let textm = document.createElement('li');
+           let cont = document.createTextNode(wen);
+           textm.appendChild(cont);
+           
+           to.insertBefore(textm,to.childNodes[2])
+
+    
+        }
 
 
 
-        function start(){
-            initialize ++;
-           let minout = parseInt(initialize/60);
-           let secout = (initialize%60);
+      let battery = document.getElementById('battery');
 
-           minout = (minout<10)? "0"+minout:minout;
-           secout = (secout<10)? "0"+secout:secout;
-          
-         
-            
-           document.getElementById('show').innerHTML = `you are now on your way from ${wen} to ${got}`;
-           document.getElementById('play').innerHTML = `${minout}: ${secout}`; 
-          }
-  function ded(){
-            p = setInterval(start,1000)
-            Pause.style.visibility = 'visible';
-           Pause.style.position = 'relative';
-           STOP.style.visibility='visible' 
-           STOP.style.position = 'relative';
-          stat.style.visibility = 'hidden';
-           stat.style.position = 'absolute'
-           play.style.visibility = 'visible';
-           play.style.position = 'absolute'
-           weh.style.visibility = 'hidden'
-           go.style.visibility = 'hidden'
-           wehh.style.display = 'none'
-           goo.style.display = 'none'
-           cont.style.display = 'none'
-      
-            
+      function chargingbattery(){
+       battery.innerHTML = '&#xf244;'
+       battery.style.color = 'red'
+
+       setTimeout(function(){
+         battery.innerHTML = '&#xf243;'
+         battery.style.color = 'red'
+       }, 1000);
+
+       setTimeout(function(){
+         battery.innerHTML = '&#xf242;'
+         battery.style.color = 'gold'
+       }, 2000);
        
-            
-          }
+       setTimeout(function(){
+         battery.innerHTML = '&#xf241;'
+         battery.style.color = 'gold'
+       }, 3000);
+       
+       setTimeout(function(){
+         battery.innerHTML = '&#xf240;'
+         battery.style.color = 'green'
+       }, 4000);
+      }
 
-          function god(){
-            clearInterval(p)
-            cont.style.visibility = 'visible'
-            cont.style.position = 'relative'
-            pause.style.visibility = 'hidden'
-            show.style.visibility = 'hidden'
-            pau.innerHTML = 'pls wait a moment'
-          }
-                 stat.addEventListener('click', ded);
+      chargingbattery();
 
-                 pause.addEventListener('click',god);
+      setInterval(chargingbattery,4000);
+        //  js animation
+
+      //   let timeid = setInterval(frame,10);
+        
+      //   let x = 0;
+
+      //   function frame(){
+      //     x++
+      // document.querySelector('img').style.marginLeft = x + 'px';
+     
+      // if(x== 500){
+      //   clearInterval(timeid);
+      // }
+      
+      //   }
+
+      
+
+
         // let a = new Date().getMonth()+1;
         //  console. log(a);
 

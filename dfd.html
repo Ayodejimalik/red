@@ -39,7 +39,7 @@
 
 
   @media screen and (max-width:768px) {
- 
+
 
     td {
       font-size: 15px;
@@ -61,10 +61,11 @@
     background-color: #F99FC9FF;
     padding: 10px;
   }
+
 </style>
 
 <body>
-
+   <button onclick="bool()"></button>
   <!-- A Even Number -->
 
 
@@ -110,7 +111,19 @@
       alert(`my name is kehinde abdulmalik   i am dark in complextion.i am from ${resturant.menu.located} and  i like having drink like ${resturant.menu.drink} 
          my favourite sport is ${resturant.menu.sport} and my favourite club is ${resturant.menu.chanishdish} `)
     }
+    function bool(){
+    const person = {
+      fisrtname:`malik`,
+      secname: `malik`,
+      job:`programing`,
 
+      fullName:function (){
+        return this.secname + "" + this.fisrtname;
+      },
+     
+    }
+    alert(person.fullName)
+   
 
     // Checking date of birth
     function mar() {
@@ -423,7 +436,7 @@
       </tbody>
     </table>
 
-1
+    1
 
   </div>
 

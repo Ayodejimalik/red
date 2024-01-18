@@ -158,16 +158,18 @@
         border: none;
         margin: auto;
     }
-    body{
+
+    body {
         animation-name: koko;
         animation-duration: 4s;
-        animation-timing-function:ease-in;
+        animation-timing-function: ease-in;
         animation-delay: 0s;
         animation-iteration-count: infinite;
-        animation-direction:alternate;
+        animation-direction: alternate;
         animation-play-state: running;
 
     }
+
     /* @keyframes koko {
         from{
             background-image: url(img/fisrt\ image.jpg);
@@ -178,6 +180,76 @@
            
         }
     } */
+    #btnstart {
+        padding: 7px;
+        border-radius: 5px;
+        border: none;
+        width: 20%;
+        text-align: center;
+        margin-left: 10%;
+    }
+
+    #btnpause {
+        visibility: hidden;
+        padding: 7px;
+        border-radius: 5px;
+        border: none;
+        width: 20%;
+        width: fit-content;
+    }
+
+    #btnstop {
+        visibility: hidden;
+        padding: 7px;
+        border-radius: 5px;
+        border: none;
+        width: 20%;
+        width: fit-content;
+        text-align: center;
+
+    }
+
+    #btncontinue {
+        visibility: hidden;
+        padding: 7px;
+        border-radius: 5px;
+        border: none;
+        width: 20%;
+        margin-right: 8%;
+
+
+    }
+
+    #btnreset {
+        visibility: hidden;
+        padding: 7px;
+        border-radius: 5px;
+        border: none;
+        text-align: center;
+        margin-right: 150px;
+    }
+
+    #SYSTEM {
+        border: 5px solid;
+        width: fit-content;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        background-color: grey;
+        margin-left: 35%;
+    }
+
+    #btn {
+        text-align: center;
+        margin: 1px;
+        display: flex;
+        align-items: center;
+    }
+
+    #vis {
+        border: 2px solid black;
+        padding: 5px;
+    }
 </style>
 
 <body>
@@ -304,7 +376,53 @@
             <h3 id="ans"></h3>
             <button id="sub" onclick="val()">SUBMIT</button>
 
+        </div><br><br>
+        <!-- uber price -->
+        <div id="SYSTEM">
+            <h1 id="UBER">UBER PRICE SYSTEM </h1>
+            <label for="" id="wehh">input where you are leaving now</label><br><br>
+            <input type="text" id="weh" value=""><br><br><br>
+
+            <label for="" id="goo">Enter where you are go To</label><br><br>
+            <input type="text" id="go" value=""><br><br>
+            <div id="btn">
+                <button id="btnstart" style="background-color: blueviolet;">Request Ride</button>
+                <button id="btnpause" style="background-color: gold;">Pause</button>
+                <button id="btncontinue" style="background-color: green">Continue</button>
+                <button id="btnstop" style="background-color: greenyellow;">STOP</button>
+                <button id="btnreset" style="background-color: red;"> receipt</button>
+            </div>
+            <h5 id="show"></h5>
+            <h5 id="pau"></h5>
+            <span id="play">00:00</span><br /><br />
+            <div style="visibility: hidden;" id="tab">
+
+                <table id="vis">
+                    <tr>
+                        <td>Base fare</td>
+                        <td id="base"></td>
+                    </tr>
+                    <tr>
+                        <td>Time spent</td>
+                        <td id="time"></td>
+                    </tr>
+                    <tr>
+                        <td> Total Amount</td>
+                        <td id="Total"></td>
+                    </tr>
+                    <tr>
+                        <td>Tax </td>
+                        <td id="Tax"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Payable amount</td>
+                        <td id="payable"></td>
+                    </tr>
+                </table>
+            </div>
         </div>
+
 
 
         <script>
@@ -516,7 +634,123 @@
                 }
             }
 
+            // uber
+            let btnstart = document.getElementById('btnstart');
+            let btnpause = document.getElementById('btnpause');
+            let btnreset = document.getElementById('btnreset');
+            let btncontinue = document.getElementById('btncontinue');
+            let btnstop = document.getElementById('btnstop');
+            let show = document.getElementById('show');
+            let weh = document.getElementById('weh');
+            let go = document.getElementById('go');
+            let tab = document.getElementById("tab");
+            let play = document.getElementById("play");
+            let goo = document.getElementById('goo')
+            let wehh = document.getElementById('wehh');
+            let UBER = document.getElementById('UBER');
+            let SYSTEM = document.getElementById('SYSTEM');
+            let vis = document.getElementById('vis');
 
+            let fare = document.getElementById('base');
+            let spent = document.getElementById('time');
+            let caculate = document.getElementById('Total');
+            let rate = document.getElementById('Tax');
+            let pay = document.getElementById('payable');
+
+
+
+            let initialize = 0;
+            let minout, secout, p, basefare, timefare, cal, taxrate, amount;
+
+
+            function start() {
+                initialize++;
+                minout = parseInt(initialize / 60);
+                secout = initialize % 60;
+                minout = (minout < 10) ? "0" + minout : minout;
+                secout = (secout < 10) ? "0" + secout : secout;
+
+
+
+                play.innerHTML = `${minout}: ${secout}`
+
+
+            }
+            function ded() {
+                p = setInterval(start, 1000)
+                btnpause.style.visibility = 'visible';
+                btnpause.style.position = 'relative';
+                btnstop.style.visibility = 'visible'
+                btnstop.style.position = 'relative';
+                btnstart.style.visibility = 'hidden';
+                play.style.visibility = 'visible'
+                weh.style.display = 'none'
+                go.style.display = 'none'
+                wehh.style.display = 'none'
+                goo.style.display = 'none'
+
+                if (weh.value.trim() !== '' && go.value.trim() !== '') {
+                    show.innerHTML = `You are now on your way from ${weh.value} to ${go.value}`;
+                } else {
+                    alert('Please input where you are going to and your destination.');
+                }
+            }
+
+            function god() {
+                clearInterval(p)
+                btncontinue.style.visibility = 'visible';
+                btncontinue.style.position = 'relative'
+                btnpause.style.visibility = 'hidden'
+
+                show.innerHTML = 'please wait a moment the journey will continue soon be patient'
+
+            }
+            function cont() {
+                p = setInterval(start, 1000);
+                btncontinue.style.visibility = 'hidden';
+                btnpause.style.visibility = 'visible'
+                show.innerHTML = `your journey from ${weh.value} to ${go.value} has  continue`
+            }
+            function toop() {
+                clearInterval(p);
+                btnstop.style.visibility = 'hidden'
+                btncontinue.style.visibility = 'hidden'
+                btnreset.style.visibility = 'visible'
+                btnpause.style.visibility = 'hidden'
+                btnreset.style.position = 'relative'
+                show.innerHTML = `your journey from ${weh.value} to ${go.value} has now come to an End `
+            }
+            function yoot() {
+                clearInterval(p)
+                console.log(p)
+                btnreset.style.visibility = 'hidden';
+                play.style.display = 'none';
+                tab.style.visibility = 'visible';
+                show.style.visibility = 'hidden';
+                UBER.style.display = 'none';
+                SYSTEM.style.width = '20%';
+                vis.style.alignItems = 'center';
+                vis.style.justifyContent = 'center';
+
+                basefare = 1000;
+                secout = secout / 60;
+                timefare = Math.trunc((minout + secout) * 100);
+                cal = Math.trunc(basefare + timefare);
+                taxrate = Math.trunc(cal * 0.10);
+                amount = Math.trunc(taxrate + cal);
+
+                fare.innerHTML = `: ${basefare}`;
+                spent.innerHTML = `: ${timefare}`;
+                caculate.innerHTML = `: ${cal}`;
+                rate.innerHTML = `:  ${taxrate}`;
+                pay.innerHTML = `: ${amount}`;
+            }
+
+            btnreset.addEventListener("click", yoot);
+            btnstop.addEventListener("click", toop);
+            btncontinue.addEventListener("click", cont);
+            btnpause.addEventListener('click', god);
+            btnstart.addEventListener('click', ded);
 
 
 
