@@ -384,9 +384,9 @@
             <h1 id="UBER">UBER PRICE SYSTEM </h1>
             <label for="" id="wehh">input where you are leaving now</label><br>
             <input type="text" id="weh" value=""oninput= "validatehet()" ><br>
-            <span id="spat" style="color: red;"></span><br><br>
+            <span id="spat" style="color: red;"></span><br>
 
-            <label for="" id="goo">Enter where you are go To</label><br>
+            <label for="" id="goo">Enter where you are go To</label><br><br>
             <input type="text" id="go" value="" oninput="validatehey()"><br>
             <span id="collect" style="color: red;"></span>
             <div id="btn">
@@ -780,9 +780,8 @@
                 secout = +(secout);
                 document.getElementById('used').innerHTML=`${minout} : ${secout}`;
                 
-                basefare = 1000;
-                
-                timefare = Math.floor((minout + secout / 60) * 20);
+                basefare = 1000;  
+                timefare = Math.floor((minout + secout / 60) * 10);
                 cal = Math.trunc(basefare + timefare);
                 taxrate = Math.trunc(cal * 0.10);
                 amount = Math.trunc(taxrate + cal);
