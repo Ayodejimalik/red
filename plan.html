@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #bammi {
+        border: 5px solid red;
+        width: fit-content;
+        padding: 5px;
+    }
+
+    #ad {
+        text-align: center;
+        margin-left: 35%;
+        margin-top: 5%;
+        background-color: red;
+        border: none;
+    }
+  
+</style>
+
+<body>
+
+    <div id="bammi">
+        <input type="text" id="wen" placeholder="Task">
+        <input type="text" id="top" placeholder="input how many time" value=""><br>
+
+        <span id="to" style="width: fit-content;" value="">
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+
+        </span><br>
+
+        <span id="play" style="visibility: hidden;">00:00</span>
+
+        <button onclick="man()" id="ad">ADD</button>
+    </div>
+
+    <script>
+        let initialize = 0;
+        let play = document.getElementById('play');
+        function man() {
+            let wen = document.getElementById('wen');
+            let top = document.getElementById('top').value;
+            let to = document.getElementById('to');
+
+            let textm = document.createElement('h4');
+            let cont = document.createTextNode(wen.value);
+            textm.style.display = 'flex'
+
+            textm.appendChild(cont);
+            to.insertBefore(textm, to.childNodes[0])
+
+
+            let a = document.createElement('h4');
+            let b = document.createTextNode(`\u00d7`);
+            a.appendChild(b);
+            a.style.cursor = 'pointer'
+            textm.appendChild(a);
+            a.className = 'samad';
+
+            let jam = document.getElementsByClassName('samad');
+            let t;
+            for (t = 0; t < jam.length; t++) {
+                jam[t].onclick = function () {
+                    this.parentNode.style.display = 'none'
+                }
+            }
+
+
+            let y = document.createElement('h4');
+            let x = document.createTextNode(`\u2714`);
+            y.appendChild(x);
+            y.style.cursor = 'pointer'
+            textm.appendChild(y);
+            y.className = 'mark';
+
+            let am = document.getElementsByClassName('mark');
+            let k;
+            for (k = 0; k < am.length; k++) {
+                am[k].onclick = function () {
+                    this.parentNode.style.textDecoration = 'line-through';
+                }
+            }
+
+
+
+            let j = document.createElement('h4');
+            let m = document.createTextNode(`Edit`);
+            j.style.background = 'red'
+            j.appendChild(m);
+            j.style.cursor = 'pointer'
+            textm.appendChild(j);
+            j.className = 'samuel';
+
+            // let sam = document.getElementsByClassName('samuel');
+            // let g;
+            // for (g = 0; g < sam.length; g++) {
+            //     sam[g].onclick = function () {
+            //         this.parentNode.style.visibility = 'visible';
+            //         wen.style.visibility = 'visible'
+            //         top.value.style.visibility = 'visible'
+            //     }
+            // }
+            let g;
+            for (g = 0; g < sam.length; g++) {
+                sam[g].onclick = function () {
+                    let parentNode = this.parentNode;
+                    let wen = parentNode.childNodes[0];  // Task element
+                    let top = document.getElementById('top');  // Input element
+
+                    parentNode.style.visibility = 'visible';
+                   document.getElementById('wen').style.visibility = 'visible';
+                    document.getElementById('top').style.visibility = 'visible';
+                };
+            }
+
+
+
+
+            if (!wen || !top || isNaN(top)) {
+                alert(`input the right statement`)
+                to.style.display = 'none'
+            }
+            else {
+
+                to.style.display = 'inline-block'
+                play.style.visibility = 'visible'
+                initialize++;
+                minout = parseInt(initialize / 60);
+                secout = initialize % 60;
+                minout = (minout < 10) ? "0" + minout : minout;
+                secout = (secout < 10) ? "0" + secout : secout;
+
+
+
+                play.innerHTML = `${minout}: ${secout}`
+            }
+
+        }
+
+
+
+
+
+
+        function start(e) {
+            if (e.key === 'Enter') {
+                man();
+            }
+        }
+        addEventListener('keyup', start)
+        let sam = document.getElementsByClassName('samuel');
+
+
+
+    </script>
+</body>
+
+</html>

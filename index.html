@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,21 +40,6 @@
         justify-content: center;
         text-align: center;
 
-    }
-
-    #od {
-        border: 2px solid grey;
-        width: fit-content;
-        background-color: grey;
-        color: white;
-        border-radius: 5px;
-        margin-top: 5%;
-        text-align: center;
-    }
-
-    #sta {
-        border-radius: 5px;
-        background-color: darkgrey;
     }
 
     #rat {
@@ -198,12 +182,7 @@
 
 
 
-    <div id="od">
-        <h1>A odd Number</h1>
-        <input type="text" id="hul"><br><br>
-        <span id="yul"></span><br>
-        <button onclick="sad()" id="sta"> Start</button>
-    </div>
+  
 
     <!-- caculator -->
     <div id="tat">
@@ -223,10 +202,16 @@
         <br><br><br><br>
         <div>
             <button onclick="greet()" style="margin-top: 5%;">Greetings</button>
-        </div>
+        </div><br>
+        <!-- Checking Date of Birth -->
+        <button id="ded" onclick="bol()">About
+            me</button>
+        <button onclick="mar()" id="ded">check your date of birth</button>
+        <button onclick="guy()" id="ded">Guessing nigeria age</button>
+        <br>
 
         <script>
-              function greet() {
+            function greet() {
                 let gr = new Date().getHours();
                 if (gr > 0 && gr < 12) {
                     alert('Good morning')
@@ -300,6 +285,70 @@
                     }
                 })
 
+            }
+
+
+
+            // About Me
+            function bol() {
+                let resturant = {
+                    name: 'food mata',
+                    location: 'u.i ibadan',
+                    menu: {
+                        Africandish: ['eba', 'fufu', 'egusi'],
+                        located: ['oyo state'],
+                        drink: ['coke', 'fearless', 'origin'],
+                        chanishdish: ['barcelona'],
+                        sport: ['football'],
+                        meat: [''],
+                    },
+                    price: '3000naria per plate',
+                    days: `'monday','tuesday','wesnesday'`,
+                }
+                alert(`my name is kehinde abdulmalik   i am dark in complextion.i am from ${resturant.menu.located} and  i like having drink like ${resturant.menu.drink} 
+                           my favourite sport is ${resturant.menu.sport} and my favourite club is ${resturant.menu.chanishdish} `)
+            }
+
+
+            // Checking date of birth
+            function mar() {
+                let a = prompt("input your birth year ");
+                const b = new Date().getFullYear();
+                let c = b - a
+                let retire = 65 - c
+
+                if (!a || isNaN(a)) {
+                    alert(`input a year`)
+                }
+                else if (a <= 1958) {
+                    alert(`You are old enough plz go and retire`)
+                }
+                else if (a > b) {
+                    alert(`invalid year`)
+                }
+                else {
+                    alert(`you have  ${retire} years to retire from civil service work `)
+                }
+            }
+
+
+            // Guess the age off nigeria 
+            function guy() {
+                let y = prompt('GUESS THE AGE OF NIGERIA')
+                y = Number(y);
+                switch (y) {
+                    case 59:
+                        alert('you are wrong');
+                        break;
+                    case 60:
+                        alert('almost correct 👏');
+                        break;
+                    case 63:
+                        alert('correct answer');
+                        break;
+                    default:
+                        alert('you are wrong')
+                }
             }
         </script>
 

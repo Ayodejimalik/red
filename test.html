@@ -50,78 +50,156 @@
      #play{
       visibility: hidden;
      }
-     #continue{
+    #continue{
       visibility: hidden;
 
-padding: 5px;
-border-radius: 5px;
-  border: none;
-  width: 20%;
-  text-align: center;
-  margin: auto
-     }
-     #battery{
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    width: 20%;
+    text-align: center;
+    margin: auto
+    }
+    #battery{
       font-weight: bolder;
       font-size: 50px;
 
-     }
+    }
+  
+    #mbammi{
+      border: 5px solid red;
+    }
+   
+
 </style>
 <body>
-    <!-- <h4 id="countdown"></h4>
-    <h3 id="digitaltime"></h3> -->
-
-    <!-- <div>
-        <h1>UBER PRICE SYSTEM </h1>
-        <label for="" id="bac">input where you are leaving now</label><br><br>
-        <input type="text" id="weh"><br><br><br>
-    
-        <label for="" id="goo">Enter where you are go To</label><br><br>
-        <input  type="text" id="go"><br><br>
-        <div style="display: flex; margin: 1px;">
-          <button id="stat">Start</button>
-          <button id="Pause">Pause</button>
-          <button id="STOP"> STOP</button>
-          <button id="clear">Click for receipt</button>
-        </div>
-      </div>
-      <h5 id="show"></h5>
-        <span id="play">00:00</span><br /><br /> -->
-<!-- 
-        <img src="img/fisrt image.jpg" style="width: 50px;">
-         <button onclick="frame()">Start</button><br> -->
-     
-
-       <div id="mynewid" >
-      <input type="text"id="wen">
-      <ul id="to"  style="background-color: gold;" >
-        <li>balil</li>
-        <li>malik</li>
-      </ul>
-
-
-
-        <button onclick="man()">New Year</button>
-       </div>
 
       
 
-         <i class="fa-solid " id= "battery"></i>
-    <script>
-        function man(){
-          let wen = document.getElementById('wen').value;
-           let to =document.getElementById('to');
-           
-            let textm = document.createElement('li');
-           let cont = document.createTextNode(wen);
-           textm.appendChild(cont);
-           
-           to.insertBefore(textm,to.childNodes[2])
+       <div id="bammi" >
+          <input type="text"id="wen" placeholder="Task">
+          <input type="text" id="top" placeholder="input how many time" value="">
+
+          <span id="to"  style="background-color: gold; width: fit-content;" value="" >
+        
+          </span>
+
+          <span id="play" style="visibility: hidden;" >00:00</span>
+
+            <button onclick="man()">ADD</button>
+       </div>
 
     
+
+         <i class="fa-solid " id= "battery"></i>
+    <script>
+
+
+
+              function man(){
+     
+          //       initialize++;
+          // minout = parseInt(initialize / 60);
+          // secout = initialize % 60;
+          // minout = (minout < 10) ? "0" + minout : minout;
+          // secout = (secout < 10) ? "0" + secout : secout;
+
+
+
+          // play.innerHTML = `${minout}: ${secout}`
+
+
+
+
+
+              let wen = document.getElementById('wen');
+              let top = document.getElementById('top').value;
+              let to =document.getElementById('to');
+
+              let textm = document.createElement('h4');
+              let cont = document.createTextNode(wen.value);
+              textm.appendChild(cont);
+              to.insertBefore(textm,to.childNodes[0])
+
+
+                let a = document.createElement('h4');
+                let b = document.createTextNode( `\u00d7`);
+                a.appendChild(b);
+                a.style.cursor = 'pointer'
+                textm.appendChild(a);
+                a.className= 'samad';
+            
+                let jam = document.getElementsByClassName('samad');
+                let t;
+                for(t=0;  t<jam.length; t++){
+                  jam[t].onclick = function(){
+                    this.parentNode.style.display = 'none'
+                  }
+                }
+
+
+                let y = document.createElement('h4');
+                let x = document.createTextNode( `\u2714`);
+                y.appendChild(x);
+                y.style.cursor = 'pointer'
+                textm.appendChild(y);
+                y.className= 'mark';
+            
+                let am = document.getElementsByClassName('mark');
+                let k;
+                for(k=0; k<am.length; k++){
+                  am[k].onclick = function(){
+                    this.parentNode.style.textDecoration = 'line-through';
+                  }
+                }
+
+
+
+                let j = document.createElement('h4');
+                let m = document.createTextNode( `Edit`);
+                j.appendChild(m);
+                j.style.cursor = 'pointer'
+                textm.appendChild(j);
+                j.className= 'samuel';
+            
+                let sam = document.getElementsByClassName('samuel');
+                let g;
+                for(g=0; g<sam.length; g++){
+                  sam[g].onclick = function(){
+                    this.parentNode.style.textDecoration = 'line-through';
+                  }
+                }
+
+
+
+
+                    if(!wen || !top|| isNaN(top)){
+              alert(`input the right statement`)
+              to.style.display = 'none'
         }
+        else{
+          
+          to.style.display = 'inline-block'
+        }
+            }
 
 
 
+
+
+            
+      function start(e){
+            if(e.key === 'Enter'){
+              man();
+            }
+      }
+          addEventListener('keyup', start)
+
+
+
+
+
+          
       let battery = document.getElementById('battery');
 
       function chargingbattery(){
@@ -140,7 +218,7 @@ border-radius: 5px;
        
        setTimeout(function(){
          battery.innerHTML = '&#xf241;'
-         battery.style.color = 'gold'
+         battery.style.color = 'orange'
        }, 3000);
        
        setTimeout(function(){

@@ -51,31 +51,15 @@
 
   }
 
-  #ded {
-    border: 1px solid black;
-    border-radius: 5px;
-    box-shadow: inset 3px 3px 3px 1px;
-    border: none;
-    text-align: center;
-    margin-top: 3%;
-    background-color: #F99FC9FF;
-    padding: 10px;
-  }
 
 </style>
 
 <body>
-   <button onclick="bool()"></button>
+  <button onclick="bool()"></button>
   <!-- A Even Number -->
 
 
 
-  <!-- Checking Date of Birth -->
-  <button id="ded" onclick="bol()"
-    style="border: none; border-radius: 5%; background-color: #F99FC9FF;padding: 10px; ">About
-    me</button>
-  <button onclick="mar()" id="ded">check your date of birth</button>
-  <button onclick="guy()" id="ded">Guessing nigeria age</button>
   <br>
   <script>
     // Greetings
@@ -92,114 +76,79 @@
     alert(`Today is ${o[p]}`)
 
 
-    // About Me
-    function bol() {
-      let resturant = {
-        name: 'food mata',
-        location: 'u.i ibadan',
-        menu: {
-          Africandish: ['eba', 'fufu', 'egusi'],
-          located: ['oyo state'],
-          drink: ['coke', 'fearless', 'origin'],
-          chanishdish: ['barcelona'],
-          sport: ['football'],
-          meat: [''],
-        },
-        price: '3000naria per plate',
-        days: `'monday','tuesday','wesnesday'`,
-      }
-      alert(`my name is kehinde abdulmalik   i am dark in complextion.i am from ${resturant.menu.located} and  i like having drink like ${resturant.menu.drink} 
-         my favourite sport is ${resturant.menu.sport} and my favourite club is ${resturant.menu.chanishdish} `)
-    }
-    function bool(){
-    const person = {
-      fisrtname:`malik`,
-      secname: `malik`,
-      job:`programing`,
 
-      fullName:function (){
-        return this.secname + "" + this.fisrtname;
-      },
-     
-    }
-    alert(person.fullName)
+    function bool() {
+      const person = {
+        fisrtname: `malik`,
+        secname: `malik`,
+        job: `programing`,
+
+        fullName: function () {
+          return this.secname + "" + this.fisrtname;
+        },
+
+      }
+      alert(person.fullName)
+
+
+      // Checking date of birth
+      function mar() {
+        let a = prompt("input your birth year ");
+        const b = new Date().getFullYear();
+        let c = b - a
+        let retire = 65 - c
+
+        if (!a || isNaN(a)) {
+          alert(`input a year`)
+        }
+        else if (a <= 1958) {
+          alert(`You are old enough plz go and retire`)
+        }
+        else if (a > b) {
+          alert(`invalid year`)
+        }
+        else {
+          alert(`you have  ${retire} years to retire from civil service work `)
+        }
+      }
+
+
    
 
-    // Checking date of birth
-    function mar() {
-      let a = prompt("input your birth year ");
-      const b = new Date().getFullYear();
-      let c = b - a
-      let retire = 65 - c
+      // A odd Number
+      // let hul, yul;
 
-      if (!a || isNaN(a)) {
-        alert(`input a year`)
-      }
-      else if (a <= 1958) {
-        alert(`You are old enough plz go and retire`)
-      }
-      else if (a > b) {
-        alert(`invalid year`)
-      }
-      else {
-        alert(`you have  ${retire} years to retire from civil service work `)
-      }
-    }
+      // function sad() {
 
+      //   hul = document.querySelector('#hul').value;
+      //   yul = document.querySelector('#yul');
+      //   for (f = 0; f < 2; f++) {
+      //     if (hul % 3 == 0) {
+      //       yul.innerHTML = 'You are correct';
+      //     }
+      //     else if (hul % 2 == 0) {
+      //       yul.innerHTML = 'You are wrong plz only odd number'
+      //     }
 
-    // Guess the age off nigeria 
-    function guy() {
-      let y = prompt('GUESS THE AGE OF NIGERIA')
-      y = Number(y);
-      switch (y) {
-        case 59:
-          alert('you are wrong');
-          break;
-        case 60:
-          alert('almost correct 👏');
-          break;
-        case 63:
-          alert('correct answer');
-          break;
-        default:
-          alert('you are wrong')
-      }
-    }
+      //   }
+      // }
 
-    // A odd Number
-    // let hul, yul;
+      let hul, yul;
 
-    // function sad() {
+      function sad() {
 
-    //   hul = document.querySelector('#hul').value;
-    //   yul = document.querySelector('#yul');
-    //   for (f = 0; f < 2; f++) {
-    //     if (hul % 3 == 0) {
-    //       yul.innerHTML = 'You are correct';
-    //     }
-    //     else if (hul % 2 == 0) {
-    //       yul.innerHTML = 'You are wrong plz only odd number'
-    //     }
+        hul = document.querySelector('#hul').value;
+        yul = document.querySelector('#yul');
+        for (f = 0; f < 2; f++) {
+          if (hul % 2 == 0) {
+            yul.innerHTML = 'You are correct';
+          }
+          else if (hul % 2 == 0) {
+            yul.innerHTML = 'You are wrong plz only odd number'
+          }
 
-    //   }
-    // }
-
-    let hul, yul;
-
-    function sad() {
-
-      hul = document.querySelector('#hul').value;
-      yul = document.querySelector('#yul');
-      for (f = 0; f < 2; f++) {
-        if (hul % 2 == 0) {
-          yul.innerHTML = 'You are correct';
         }
-        else if (hul % 2 == 0) {
-          yul.innerHTML = 'You are wrong plz only odd number'
-        }
-
       }
-    }
 
   </script>
 
