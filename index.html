@@ -5,41 +5,301 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script> -->
+
 </head>
 <style>
-    .table,
-    th,
-    td,
-    tr {
-        border: 1px solid black;
-        margin-top: 5%;
-    }
+    * {
 
-    .table {
-        padding: 20%;
-        width: 40%;
-
-    }
-
-    #lop {
-        border: 1px solid black;
-        width: 40%;
-        background-color: gray;
-        color: white;
-        border-radius: 5px;
-        margin-top: 5px;
+        box-sizing: border-box;
     }
 
     body {
-        margin: auto;
-        /* margin-left: 20%; */
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    div {
+        text-align: center;
+    }
+
+    div h1 {
+        letter-spacing: 2px;
+        text-transform: uppercase;
+
+    }
+
+    div input[type=number] {
+        margin: 8px 0;
+        padding: 8px;
+        width: 40%;
+        font-size: 16px;
+    }
+
+    #num1,
+    input[type=text] {
+        margin: 8px 0;
+        padding: 8px;
+        width: 40%;
+        box-shadow: inset 1px;
+
+    }
+
+    div input[type=number]:read-only {
+        border: 1px solid red;
+
+        color: chartreuse;
+        text-align: center;
+        font-size: smaller;
+
+    }
+
+    .koko {
+        margin: 0 4px;
+        padding: 6px 6px;
+        width: 32px;
+
+
+    }
+
+
+    #ded {
+        width: 20%;
+        border: none;
+        height: 15vh;
+        text-align: center;
+        margin-left: 40%;
+        margin-top: 3%;
+        background-color: #F99FC9FF;
+    }
+
+    #rat {
+        border: 10px solid black;
+        background-color: grey;
         width: fit-content;
+        margin: auto;
+    }
+
+    #pol {
+        background-color: grey;
+        border: none;
+        border-radius: 10px;
+        width: fit-content;
+        text-align: center;
+        margin-top: 5%;
+        color: white;
+        margin: auto;
+        height: 50dvb;
+    }
+
+    #Amount {
+        background-color: white;
+    }
+
+    #but {
+        background-color: white;
+
+    }
+
+    #pol {
+        animation-name: baba;
+        animation-duration: 3s;
+        animation-timing-function: linear;
+        animation-delay: 5s;
+        animation-iteration-count: infinite;
+        animation-direction: forwards;
+    }
+
+    #lod {
+        margin-top: 5%;
+    }
+
+    #shit {
+        margin: 15px 0px;
+    }
+
+    #lod {
+        border: 1px solid grey;
+        background-color: grey;
+        width: fit-content;
+        margin: auto;
+        margin-top: 5%;
+        padding: 5%;
+        height: 50dvb;
+    }
+   
+
+
+    @media screen and(max-width:768px) {
+        #rat {
+            height: 50vh;
+        }
+
+    }
+
+    @keyframes baba {
+        from {
+            background-image: url(img/down\ \(4\).jpg);
+            transition: all;
+        }
+
+        to {
+            background-image: url(img/down\ \(2\).jpg);
+            transition: all;
+        }
+    }
+
+    #bool {
+        text-align: center;
+        border: 5px solid black;
+        background-color: grey;
+        width: fit-content;
+        border: none;
+        margin: auto;
+        height: 50dvb;
+    }
+
+    #tat {
+        animation-name: koko;
+        animation-duration: 4s;
+        animation-timing-function: ease-in;
+        animation-delay: 0s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-play-state: running;
+    }
+
+    /* @keyframes koko {
+        from{
+            background-image: url(img/fisrt\ image.jpg);
+            transition: all;
+            background-repeat: no-repeat;
+        }
+        to{
+            background-image: url(img/sec\ image.jpg);
+            transition: all;
+            background-repeat: no-repeat;
+        }
+    } */
+
+
+    #btnstart {
+        padding: 7px;
+        border-radius: 5px;
+        border: none;
+        width: 70px ;
+         margin: auto;
+         margin-left: 55%;
+
+    }
+
+    #btnpause {
+        visibility: hidden;
+        padding: 7px;
+        border-radius: 5px;
+        border: none;
+        width: fit-content;
+     
+
+    }
+
+    #btnstop {
+        visibility: hidden;
+        padding: 7px;
+        border-radius: 5px;
+        border: none;
+        width: fit-content;
+
+
+
+    }
+
+    #btncontinue {
+        visibility: hidden;
+        padding: 7px;
+        border-radius: 5px;
+        border: none;
+        width: fit-content;
+
+
+
+    }
+
+    #btnreset {
+        visibility: hidden;
+        padding: 7px;
+        border-radius: 5px;
+        border: none;
+
+
+    }
+
+    #SYSTEM {
+        border: 5px solid;
+        width: fit-content;
+        text-align: center;
         align-items: center;
         justify-content: center;
-        text-align: center;
+        background-color: grey;
+        margin: auto;
+    }
 
+    #btn {
+
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #vis {
+        border: 2px solid black;
+        padding: 5px;
+    }
+
+    #com {
+        box-shadow: inset 5px;
+        width: 100%;
+        gap: 100px;
+        border: 5px solid black;
+       
+    }
+
+    #od {
+        border: 2px solid grey;
+        width: fit-content;
+        background-color: grey;
+        color: white;
+        border-radius: 5px;
+        text-align: center;
+        width: fit-content;
+        margin: auto;
+     
+
+    }
+
+    #sta {
+        border-radius: 5px;
+        background-color: darkgrey;
+    }
+
+    #Me {
+        width: 50%;
+        gap: 10px;
+        margin: auto;
+        margin-top: 5%;
+        background-color: grey;
+        border: 5px solid;
     }
 
     #rat {
@@ -51,196 +311,710 @@
         margin: auto;
         padding: 5%;
         background-color: grey;
-    }
-
-    #od {
-        width: fit-content;
-        margin: auto;
-        margin-top: 7%;
-    }
-
-    .table {
-        width: 70%;
-        margin: auto;
-    }
-
-    #lop {
-
-        margin: auto;
-        margin-top: 5%;
-        width: 70%;
-    }
-
-    body {
-        background-color: chocolate;
-    }
-
-    #sed {
-        border: 10px solid black;
-        width: fit-content;
-        margin: auto;
-
+        height: 70dvb;
     }
 </style>
 
 <body>
 
 
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col" style="background-color: red;">Hoisting </th>
-                <th scope="col" style="background-color: orange;">Scope </th>
-                <th scope="col" style="background-color: yellow;"> Closures </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td scope="row" style="background-color: red;">Hoisting Allows variable and function declaration to be
-                    moved at the top</td>
-                <td style="background-color: orange;"> Scope determine where variable anad function can be accesed in a
-                    <code></code>
-                </td>
-                <td style="background-color: yellow;"> Closures Allows a function to access variable from it outer scope
-                </td>
-
-
-            </tr>
-            <tr>
-                <td scope="row" style="background-color: red;"> Any variable which is declare global or local is called
-                    Hoisting </td>
-                <td style="background-color: orange ;"> scope Allows you access to certain variable to specific Areas
-                </td>
-                <td style="background-color: yellow">Closures is the combination of a function bundled together </td>
-
-            </tr>
-            <tr>
-                <td scope="row" style="background-color: red;"> Hoisting appears to move the declaration of function
-                    variable, Clasess, or import to the top of their scope, prior to execution of the <code></code>
-                </td>
-                <td style="background-color: orange;"> Scope determine the Accessibility of variable object and function
-                    form different parts of the code</td>
-                <td style="background-color: yellow;"> Closures is a form of lexical sccoping used to preserve variable
-                    From the outer scope of a function in the inner scope of a function</td>
-
-            </tr>
-        </tbody>
-
-
-    </table>
-    <div id="lop">
-        <p>For Loop: A for loop is an iteration method that is best used when you know the number of iterations
-            ahead of time.For example, if we want to check the grade of every student in the class, we loop from 1
-            to that number. </p>
-        <p>While Loop: A while loop is an iteration method that is best used when you don't know the number of
-            iterations ahead of time.example are if we want to ask a user for a number between 1 and 10, we don't
-            know how many times the user may enter a larger number, so we keep asking "while the number is not
-            between 1 and 10"</p>
-
-        <p>A do while loop: is a control flow statement that executes a block of code at least once, and then
-            repeatedly executes the block, or not, depending on a given boolean condition at the end of the block
-        </p>
-
-    </div><br><br><br>
-
-    <div id="sed">
-        <h1>Methods in JavaScript and their examples</h1>
-
-        <h4>Math Method: are</h4>
-        <p> Min():it returns minimun value of the given Number<br>
-            Pow():it return value of a base to the power of exponent<br>
-            Random():it return closest interger value of the given number<br>
-            Trunc():it return an interger part of the given number<br>
-            max():it return maxmimun value of the given Number
-        </p>
-        <h4>String method are </h4>
-        <p> String length()<br>
-            String replace()<br>
-            String slice ()<br>
-            String trim ()<br>
-        </p><br>
-        <h4>Number Method</h4>
-        <p>number.integer():it return true if the argument is an interger<br>
-            number.Is safeinterger(): return true if the argument is a safe interger<br>
-            number.perseint(): convert a string to a whole Number
-        </p><br>
-
-        <h4>Array method</h4>
-        <p> forEach(): Calls a function for each array element<br>
-            from():Create an array from an object<br>
-            includes():Check if an array contains the specified element<br>
-            indexof():Search the array for an element and return it position
-
-        </p>
-
-
-
-
-    </div><br><br>
-
-
-
-
-  
-
-    <!-- caculator -->
-    <div id="tat">
-
-
-        <div id="rat" style="margin-top: 5%;">
-            <h1 style="text-align: center;  ">Simple arithemetic<br> caculator</h1>
-            <input type="text" placeholder="number 1" id="num1"><br><br>
-            <input type="text" placeholder="Number 2" id="num2"><br><br>
-
-            <button id="add">+</button>
-            <button id="sub">-</button>
-            <button id="mut">x</button>
-            <button id="div">/</button><br><br>
-            <input id="result" type="text" readonly><br>
+    <div class="row">
+        <div class="col-2">
+            <div class="list-group" id="com" >
+                <a class="list-group-item list-group-item-action" href="#list-item-1">AN ODD NUMBER</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-2">CALCULATOR</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-3">INVESTMENT CALCULATOR</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-4">LOAN CALCULATOR</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-5">HOTEL BOOKING</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-6">UBER PRICE</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-7">THEORY </a>
+            </div>
         </div>
-        <br><br><br><br>
-        <div>
-            <button onclick="greet()" style="margin-top: 5%;">Greetings</button>
-        </div><br>
-        <!-- Checking Date of Birth -->
-        <button id="ded" onclick="bol()">About
-            me</button>
-        <button onclick="mar()" id="ded">check your date of birth</button>
-        <button onclick="guy()" id="ded">Guessing nigeria age</button>
-        <br>
+        <div class="col-8">
+            <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scrol="true"
+                class="scrollspy-example">
+                <h4 id="list-item-1"></h4>
+                <div id="od">
+                    <h1>A odd Number</h1>
+                    <input type="text" id="hul"><br><br>
+                    <span id="yul"></span><br>
+                    <button onclick="sad()" id="sta"> Start</button>
+                </div>
+
+
+                <h4 id="list-item-2"></h4>
+                <!--CALCULATOR  -->
+                <div id="rat" style="margin-top: 5%;">
+                    <h1 style="text-align: center;  ">Simple arithemetic<br> caculator</h1>
+                    <input type="text" placeholder="number 1" id="num1"><br><br>
+                    <input type="text" placeholder="Number 2" id="num2"><br><br>
+
+                    <button id="add">+</button>
+                    <button id="sub">-</button>
+                    <button id="mut">x</button>
+                    <button id="div">/</button><br><br>
+                    <input id="result" type="text" readonly><br>
+                </div>
+                <br><br><br><br>
+
+                <!-- caculator
+                    <div id="rat">
+
+                        <h1 style="margin-left: -0%;">Simple arithemetic<br> caculator</h1>
+
+                        <input type="text" placeholder="number 1" id="num1"><br>
+                        <input type="text" placeholder="Number 2" id="num2"><br>
+
+                        <button id="add" class="koko">+</button>
+                        <button id="sub" class="koko">-</button>
+                        <button id="mut" class="koko">x</button>
+                        <button id="div" class="koko">/</button><br>
+                        <input id="result" type="text" readonly><br>
+                    </div>
+                    <br><br><br><br> -->
+                <h4 id="list-item-3"></h4>
+                <!-- Investment caculator -->
+                <div id="pol">
+                    <h1>Investment caculator</h1>
+                    <label for="text">Amout To Invest</label><br><br>
+                    <input type="text" id="Amount"><br><br>
+                    <label for="time">Time</label><br><br>
+                    <select style="width: 150px;" id="time">
+                        <option value="1">1 monthly</option>
+                        <option value="2">2 monthly</option>
+                        <option value="3">3 monthly</option>
+                        <option value="4">4 monthly</option>
+                        <option value="5">5 monthly</option>
+                        <option value="6">6 monthly</option>
+                        <option value="7">7 monthly</option>
+                        <option value="8">8 monthly</option>
+                        <option value="9">9 monthly</option>
+                        <option value="10">10 monthly</option>
+                        <option value="12">12 monthly</option>
+                    </select><br><br>
+
+
+                    <button onclick="answer()" id="but"
+                        style=" color: blue; border: none;border-radius: 5px; width: 100px;">Caculate</button>
+                    <p> Amount: <span id="output1"></span></p>
+                    <p>Total Interest:<span id="output2"></span></p>
+                    <p>Total value:<span id="output3"></span></p><br><br>
+                </div>
+                <h4 id="list-item-4"></h4>
+                <!-- loan caculator -->
+                <div id="lod">
+                    <h3 id="">LOAN CALCULATOR</h3><br>
+                    <div class="lov">
+                        <label for="text">Amount</label><br>
+                        <input type="text" id="borrow">
+                        <div class="raft">
+                            <div>
+                                <label for="number">select duration</label><br>
+                                <select id="time">
+                                    <option value="1">1 MONTH</option>
+                                    <option value="2">2 MONTH</option>
+                                    <option value="3">3 MONTH</option>
+                                    <option value="4">4 MONTH</option>
+                                    <option value="5">5 MONTH</option>
+                                    <option value="6">6 MONTH</option>
+                                    <option value="7">7 MONTH</option>
+                                    <option value="8">8 MONTH</option>
+                                    <option value="9">9 MONTH</option>
+                                    <option value="10">10 MONTH</option>
+                                    <option value="11">11 MONTH</option>
+                                    <option value="12">12 MONTH</option>
+                                </select>
+                            </div><br>
+                            <div>
+                                <select id="interest">
+                                    <option value="0.05">5%</option>
+                                    <option value="0.1">10%</option>
+                                    <option value="0.15">15%</option>
+                                    <option value="0.2">20%</option>
+                                    <option value="0.25">25%</option>
+                                    <option value="0.3">30% </option>
+                                    <option value="0.35">35% </option>
+                                    <option value="0.4">40% </option>
+                                    <option value="0.45">45% </option>
+                                    <option value="0.5">50% </option>
+                                </select>
+                            </div>
+                        </div><br>
+                        <button id="back" id="shit">
+                            Borrow
+                        </button>
+                        <h4 id="out"></h4>
+                    </div><br><br><br>
+
+                </div><br><br>
+                <h4 id="list-item-5"></h4>
+
+                <!-- hotel booking -->
+                <div id="bool">
+                    <h1>HOTEL BOOKING</h1>
+                    <select id="sct" style="width: 150px;" onclick="fop()">
+                        <option value="0">CHOOSE</option>
+                        <option value="1">public</option>
+                        <option value="2">hotel</option>
+                    </select>
+                    <h1 id="get"></h1>
+
+                    <div id="juk">
+                        <label for="" value="0" id="pic">pick how many days you want to stay
+                            long</label><br><br>
+                        <input type="text" placeholder="input how many days you want to stay long ok" id="yal"><br><br>
+                        <div>
+                            <h3 id="idk" style="text-align: center;"></h3><br>
+                            <select id="sec" style="width: 150px;">
+
+                                <option value="choose">CHOOSE A ROOM</option>
+                                <option value="option1">Classic suite {#10 per night}</option>
+                                <option value="option2">Emerald suite {#40 per night}</option>
+                                <option value="option3">suite {#50 per night}</option>
+                            </select><br>
+
+                        </div>
+                    </div><br>
+                    <h3 id="ans"></h3>
+                    <button id="sub" onclick="val()">SUBMIT</button>
+
+                </div><br><br>
+                <h4 id="list-item-6"></h4>
+                <!-- uber price -->
+                <div id="SYSTEM">
+                    <h1 id="UBER">UBER PRICE SYSTEM </h1>
+                    <label for="" id="wehh">input where you are leaving now</label><br>
+                    <input type="text" id="weh" value="" oninput="validatehet()"><br>
+                    <span id="spat" style="color: red;"></span><br>
+
+                    <label for="" id="goo">Enter where you are go To</label><br>
+                    <input type="text" id="go" value="" oninput="validatehey()"><br>
+                    <span id="collect" style="color: red;"></span>
+                    <div id="btn">
+                        <button id="btnstart" style="background-color: blueviolet;">Request Ride</button>
+                        <button id="btnpause" style="background-color: gold;">Pause</button>
+                        <button id="btncontinue" style="background-color: green">Continue</button>
+                        <button id="btnstop" style="background-color: greenyellow;">STOP</button>
+                        <button id="btnreset" style="background-color: red;"> receipt</button>
+                    </div>
+                    <h5 id="show"></h5>
+                    <span id="play" style="margin-left: -4%;">00:00</span><br /><br />
+                    <div style="visibility: hidden;" id="tab">
+
+                        <table id="vis">
+                            <tr>
+                                <td>Base fare</td>
+                                <td id="base"></td>
+                            </tr>
+
+                            <tr>
+                                <td>Time spent</td>
+                                <td id="used"></td>
+                            </tr>
+                            <tr>
+                                <td> Total Amount</td>
+                                <td id="Total"></td>
+                            </tr>
+                            <tr>
+                                <td>Tax </td>
+                                <td id="Tax"></td>
+                            </tr>
+
+                            <tr>
+                                <td>Payable amount</td>
+                                <td id="payable"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <h4 id="list-item-7"></h4>
+                <div class="accordion accordion-flush" id="Me">
+                    <div class="accordion-item" id="laz">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                aria-controls="flush-collapseOne">
+                                HISTORY OF JAVASCRIPT
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <div class="god" style="margin-top: 5%;">
+                                    <h1>HISRORY OF JAVASCRIPT</h1>
+                                    <P>JavaScript was invented by Brendan Eich in 1995.<br> It was developed for
+                                        Netscape 2, and became the ECMA-262
+                                        standard in 1997<br>After Netscape handed JavaScript over to ECMA, the Mozilla
+                                        foundation continued to
+                                        develop
+                                        JavaScript for the Firefox browser. Mozilla's latest version was 1.8.5.
+                                        (Identical to ES5)<br>Internet
+                                        Explorer
+                                        (IE4) was the first browser to support ECMA-262 Edition 1 (ES1).</P>
+                                    <p> - ECMAScript 1: Released in 1997, it was the first standardized version of
+                                        JavaScript.
+                                        - ECMAScript 2-5: These versions introduced various improvements and bug fixes
+                                        to the language.
+                                        - ECMAScript 6 (ES6): Released in 2015, it brought significant changes and new
+                                        features to JavaScript, such
+                                        as arrow functions, classes, modules, and let/const for block scoping.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                aria-controls="flush-collapseTwo">
+                                DIFFERENCE BETWEEEN JAVA AND JAVASCRIPT
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" style="background-color: aqua;">#</th>
+                                            <th scope="col" style="background-color: aqua;">Java</th>
+                                            <th scope="col" style="background-color: deepskyblue;">Javascript</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row" style="background-color: aqua;">1</th>
+                                            <td style="background-color: aqua;">
+                                                <h6>Java has a specific programming languge.where in java <br>variables
+                                                    should be proclaimed
+                                                    first
+                                                    to use in program .java<br>variables are checked at an incompetence
+                                                    time </h6>
+                                            </td>
+                                            <td colspan="2" style="background-color:deepskyblue;">
+                                                <h6>Javascript is a a pitifully composed Javascript Factors<br>can be
+                                                    Statically
+                                                    Typed,Powerfully
+                                                    composed,and feebly<br>composed </h6>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" style="background-color: aqua;">2</th>
+                                            <td style="background-color: aqua;">
+                                                <h6>Java is upheld by most Working frameworks </h6>
+                                            </td>
+                                            <td colspan="2" style="background-color: deepskyblue;">
+                                                <h6>Javascript is upheld by the vast majority of the internet<br>browser
+                                                    that accompany diverse
+                                                    Working Frameworks. </h6>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" style="background-color: aqua;">3</th>
+                                            <td style="background-color: aqua;">
+                                                <h6>Java code should be aggregated and permit full usefulfulnees to<br>
+                                                    the software engineer
+                                                </h6>
+                                            </td>
+                                            <td colspan="2" style="background-color: deepskyblue;">
+                                                <h6>Javascript code permit just a set number of component and orders
+                                                </h6>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" style="background-color: aqua;">4</th>
+                                            <td style="background-color: aqua;">
+                                                <h6>A specific languge in which variables are checked at an arranged
+                                                    time </h6>
+                                            </td>
+                                            <td colspan="2" style="background-color: deepskyblue;">
+                                                <h6>A feebly composed languge that has alot of loosened , up<br>rules
+                                                    and orders </h6>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" style="background-color: aqua;">5</th>
+                                            <td style="background-color: aqua;">
+                                                <h6>The java utilized byte code for accomplishing the stage Freedom
+                                                    ideas </h6>
+                                            </td>
+                                            <td colspan="2" style="background-color: deepskyblue;">
+                                                <h6>it is straightforward runs on the program, however,codes Written in
+                                                    Javascript are dependent
+                                                    upon program similarrity issuses for example certain codes that work
+                                                    in mozilla firefox,may
+                                                    not
+                                                    work in internet expplorer 7 or 8 </h6>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                aria-controls="flush-collapseThree">
+                                DIFFERENCE BETWEEEN LET, VAR AND CONST
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <table class="table" style="margin-top: 10px;">
+                                    <thead>
+                                        <tr>
+                                            <th style="background-color: crimson;" scope="col">#</th>
+                                            <th style="background-color: crimson;" scope="col">Var</th>
+                                            <th style="background-color: crimson;" scope="col">Let</th>
+                                            <th style="background-color: crimson;" scope="col">Const</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th style="background-color:crimson" scope="row">Hosting</th>
+                                            <td style="background-color:crimson">Hosted at top of global
+                                                scope.<br><br>can be used before the declaration.
+                                            </td>
+                                            <td style="background-color:crimson">Hosted at top some private scope and
+                                                only available after assinging value
+                                            </td>
+                                            <td style="background-color:crimson">Hosted at top some private scope and
+                                                only available after assigning
+                                                value.</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="background-color:crimson" scope="row">Scope</th>
+                                            <td style="background-color:crimson">Global scope nomarlly. <br> Start to
+                                                end of the function inside of the
+                                                function. </td>
+                                            <td style="background-color:crimson"> Block scoped always.Start to end of
+                                                the current scope anywhere. </td>
+                                            <td style="background-color:crimson">Block Scoped always Start to end of the
+                                                current scope anywhere. </td>
+                                        </tr>
+                                        <tr>
+                                            <th style="background-color:crimson" scope="row">Redeclartion</th>
+                                            <td style="background-color:crimson">Yes, we can redeclare it in the same
+                                                scope.</td>
+                                            <td style="background-color:crimson">no,we can't reduce it in same scope
+                                            </td>
+                                            <td style="background-color:crimson">no,we can't redeclare or reinnitialize
+                                                it.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseFour" aria-expanded="false"
+                                aria-controls="flush-collapseFour">
+                                DIFFERENCE BETWEEEN COMPARISON OPERATOR AND LOGICAL OPERATOR
+                            </button>
+                        </h2>
+                        <div id="flush-collapseFour" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+
+                                <tr>
+
+                                    <th scope="col" style="background-color: #F99FC9FF;">Comparison operators
+                                    </th>
+                                    <th scope="col" style="background-color: #F99FC9FF;">Logical operators</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+
+                                        <td style="background-color: #F99FC9FF;"> Comparison operators are in logica
+                                            statement to determine equality
+                                        </td>
+                                        <td style="background-color: #F99FC9FF;">Logical operators are used to
+                                            determine the logic between variables
+                                            or value</td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td style="background-color: #F99FC9FF;">Comparison operators are used to
+                                            compare values and return a boolan
+                                            (true or false) result</td>
+                                        <td style="background-color: #F99FC9FF;">logical are use to combine multiple
+                                            condition and return a boolean
+                                            result </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td style="background-color: #F99FC9FF;">Comparison are use to combine
+                                            strings </td>
+                                        <td style="background-color: #F99FC9FF;">logical operators are use to
+                                            perform logical opeation and include,
+                                            and not,or not</td>
+                                    </tr>
+                                    <tr>
+
+                                        <td style="background-color: #F99FC9FF;">Comparison operators are in logical
+                                            statement to determine </td>
+                                        <td style="background-color: #F99FC9FF;"> Logical operators are use in
+                                            determine the logic between the
+                                            variables</td>
+                                    </tr>
+                                    <tr>
+
+                                        <td style="background-color: #F99FC9FF;">Comparison operators that compare
+                                            data values to produce true or
+                                            false result </td>
+                                        <td style="background-color: #F99FC9FF;">Logical operators allow you to
+                                            combine two or more condition</td>
+                                    </tr>
+
+                                </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseFive" aria-expanded="false"
+                                aria-controls="flush-collapseFive">
+                                DIFFERENCE BETWEEN DOUBLE, SINGLE AND Backsticks
+                            </button>
+                        </h2>
+                        <div id="flush-collapseFive" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <table class="table" style="margin-top: 5%;">
+                                    <thead>
+                                        <tr>
+                                            <th style="background-color: red;" scope="col">#</th>
+                                            <th style="background-color: red;" scope="col">Single</th>
+                                            <th style="background-color: red;" scope="col">Double </th>
+                                            <th style="background-color: red;" scope="col">Backsticks</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th style="background-color: red;" scope="row">1</th>
+                                            <td style="background-color: red;">Single Quotes (''):
+                                                - Single quotes are used to declare strings in JavaScript.
+                                                - Example: `let name = 'John';</td>
+                                            <td style="background-color: red;"> Double Quotes (""):
+                                                - Double quotes are also used to declare strings in JavaScript.
+                                                - Example: `let message = "Hello, world!</td>
+                                            <td style="background-color: red;">Backticks (``):
+                                                - Backticks are used for template literals in JavaScript.
+                                                - They allow for string interpolation and multiline strings.
+                                                - Example:
+                                                javascript
+                                                let name = 'John';
+                                                let greeting = `Hello, ${name}!`;</td>
+
+                                        </tr>
+                                        <tr>
+                                            <th style="background-color: red;" scope="row">2</th>
+                                            <td style="background-color: red;">Single quotes can make your code more
+                                                readable, especially when
+                                                you have a lot of strings or when
+                                                you need to include double quotes within the string. It can help
+                                                differentiate between the
+                                                string
+                                                itself and any double quotes used within it </td>
+                                            <td style="background-color: red;">Double quotes allow for easy inclusion of
+                                                single quotes within
+                                                the string without the need for
+                                                escape characters. This can be useful when you have a string that
+                                                contains contractions or
+                                                possessive forms.</td>
+                                            <td style="background-color: red;">Backticks are used to create template
+                                                literals, which are a more
+                                                flexible way of defining strings in
+                                                JavaScript. Template literals allow you to include placeholders
+                                                (${expression}) within the
+                                                string,
+                                                making it easier to dynamically insert variables or expressions into the
+                                                string.</td>
+                                        </tr>
+                                        <tr>
+                                            <th style="background-color: red;" scope="row">3</th>
+                                            <td style="background-color: red;">Single quotes are simple and
+                                                straightforward to type, especially
+                                                on keyboards where the single quote
+                                                key is more accessible than the double quote key.</td>
+                                            <td style="background-color: red;">If you're working with HTML or CSS code
+                                                that requires the use of
+                                                double quotes for attribute values,
+                                                using double quotes in JavaScript strings can help maintain consistency
+                                                across your codebase
+                                            </td>
+                                            <td style="background-color: red;">With backticks, you can directly embed
+                                                variables or expressions
+                                                within the string using
+                                                ${expression}. This makes it easier to construct complex strings by
+                                                combining static text with
+                                                dynamic values.</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseSix" aria-expanded="false"
+                                aria-controls="flush-collapseSix">
+                                DIFFERENCE BETWEEEN HOISTING, CLOSURE AND SCOPE
+                            </button>
+                        </h2>
+                        <div id="flush-collapseSix" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" style="background-color: red;">Hoisting </th>
+                                            <th scope="col" style="background-color: orange;">Scope </th>
+                                            <th scope="col" style="background-color: yellow;"> Closures </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td scope="row" style="background-color: red;">Hoisting Allows variable and
+                                                function declaration to be
+                                                moved at the top</td>
+                                            <td style="background-color: orange;"> Scope determine where variable anad
+                                                function can be accesed in a
+                                                <code></code>
+                                            </td>
+                                            <td style="background-color: yellow;"> Closures Allows a function to access
+                                                variable from it outer scope
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                            <td scope="row" style="background-color: red;"> Any variable which is
+                                                declare global or local is called
+                                                Hoisting </td>
+                                            <td style="background-color: orange ;"> scope Allows you access to certain
+                                                variable to specific Areas
+                                            </td>
+                                            <td style="background-color: yellow">Closures is the combination of a
+                                                function bundled together </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td scope="row" style="background-color: red;"> Hoisting appears to move the
+                                                declaration of function
+                                                variable, Clasess, or import to the top of their scope, prior to
+                                                execution of the <code></code>
+                                            </td>
+                                            <td style="background-color: orange;"> Scope determine the Accessibility of
+                                                variable object and function
+                                                form different parts of the code</td>
+                                            <td style="background-color: yellow;"> Closures is a form of lexical
+                                                sccoping used to preserve variable
+                                                From the outer scope of a function in the inner scope of a function</td>
+
+                                        </tr>
+                                    </tbody>
+
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseSeven" aria-expanded="false"
+                                aria-controls="flush-collapseSeven">
+                                METHOD IN JAVASCRIPT AND THEIR EXAMPLE
+                            </button>
+                        </h2>
+                        <div id="flush-collapseSeven" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <div id="sed">
+                                    <h1>Methods in JavaScript and their examples</h1>
+
+                                    <h4>Math Method: are</h4>
+                                    <p> Min():it returns minimun value of the given Number<br>
+                                        Pow():it return value of a base to the power of exponent<br>
+                                        Random():it return closest interger value of the given number<br>
+                                        Trunc():it return an interger part of the given number<br>
+                                        max():it return maxmimun value of the given Number
+                                    </p>
+                                    <h4>String method are </h4>
+                                    <p> String length()<br>
+                                        String replace()<br>
+                                        String slice ()<br>
+                                        String trim ()<br>
+                                    </p><br>
+                                    <h4>Number Method</h4>
+                                    <p>number.integer():it return true if the argument is an interger<br>
+                                        number.Is safeinterger(): return true if the argument is a safe interger<br>
+                                        number.perseint(): convert a string to a whole Number
+                                    </p><br>
+
+                                    <h4>Array method</h4>
+                                    <p> forEach(): Calls a function for each array element<br>
+                                        from():Create an array from an object<br>
+                                        includes():Check if an array contains the specified element<br>
+                                        indexof():Search the array for an element and return it position
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseSeven" aria-expanded="false"
+                                aria-controls="flush-collapseSeven">
+                                Accordion Item #3
+                            </button>
+                        </h2>
+                        <div id="flush-collapseSeven" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body"></div>
+                        </div>
+                    </div> -->
+                </div>
+
+
+
+
+
+            </div>
+
+        </div>
+
+
 
         <script>
-            function greet() {
-                let gr = new Date().getHours();
-                if (gr > 0 && gr < 12) {
-                    alert('Good morning')
-                }
-                else if (gr >= 12 && gr < 15) {
-                    alert('Good afternoon')
-                }
-                else if (gr >= 15 && gr <= 23) {
-                    alert('Good evening')
-                }
-            }
 
-
-            let gret = new Date().getHours();
-            if (gret > 0 && gret < 12) {
-                alert('Good morning');
-            }
-            else if (gret > 12 && gret < 16) {
-                alert('Good Afternoon');
-            }
-            else if (gret > 16 && gret <= 23) {
-                alert('Good evening');
-            }
-
-
-            let p = new Date().getDay();
-            let o = ['sunday', 'monday', 'tuesday', 'wesdnesday', 'thurday', 'friday', 'saturday']
-            alert(`Today is ${o[p]}`)
-            let hul, yul;
 
             function sad() {
 
@@ -257,6 +1031,48 @@
 
                 }
             }
+
+            let gret = new Date().getHours();
+            if (gret > 0 && gret < 12) {
+                alert('Good morning');
+            }
+            else if (gret > 12 && gret < 16) {
+                alert('Good Afternoon');
+            }
+            else if (gret > 16 && gret <= 23) {
+                alert('Good evening');
+            }
+
+
+
+            // let but = document.querySelectorAll('button');
+            // console.log(but)
+            // for (let r = 0; r < but.length; r++) {
+            //     but[r].addEventListener('click', () => {
+            //         let num1 = Number(document.getElementById('num1').value);
+            //         let num2 = Number(document.getElementById('num2').value);
+            //         let c = document.getElementById('result');
+
+
+
+            //         if (but[r].id == 'add') {
+            //             c.value = num1 + num2;
+            //         }
+
+            //         else if (but[r].id == 'sub') {
+            //             c.value = num1 - num2;
+            //         }
+
+            //         else if (but[r].id == 'mut') {
+            //             c.value = num1 * num2;
+            //         }
+            //         else if (but[r].id == 'div') {
+            //             c.value = num1 / num2;
+            //         }
+            //     })
+
+            // }
+
             // caculator
 
             let but = document.querySelectorAll('button');
@@ -289,30 +1105,12 @@
 
 
 
-            // About Me
-            function bol() {
-                let resturant = {
-                    name: 'food mata',
-                    location: 'u.i ibadan',
-                    menu: {
-                        Africandish: ['eba', 'fufu', 'egusi'],
-                        located: ['oyo state'],
-                        drink: ['coke', 'fearless', 'origin'],
-                        chanishdish: ['barcelona'],
-                        sport: ['football'],
-                        meat: [''],
-                    },
-                    price: '3000naria per plate',
-                    days: `'monday','tuesday','wesnesday'`,
-                }
-                alert(`my name is kehinde abdulmalik   i am dark in complextion.i am from ${resturant.menu.located} and  i like having drink like ${resturant.menu.drink} 
-                           my favourite sport is ${resturant.menu.sport} and my favourite club is ${resturant.menu.chanishdish} `)
-            }
 
 
-            // Checking date of birth
+
+
             function mar() {
-                let a = prompt("input your birth year ");
+                let a = prompt("input your birth year");
                 const b = new Date().getFullYear();
                 let c = b - a
                 let retire = 65 - c
@@ -320,6 +1118,7 @@
                 if (!a || isNaN(a)) {
                     alert(`input a year`)
                 }
+
                 else if (a <= 1958) {
                     alert(`You are old enough plz go and retire`)
                 }
@@ -331,44 +1130,322 @@
                 }
             }
 
+            //   interest caculator
 
-            // Guess the age off nigeria 
-            function guy() {
-                let y = prompt('GUESS THE AGE OF NIGERIA')
-                y = Number(y);
-                switch (y) {
-                    case 59:
-                        alert('you are wrong');
-                        break;
-                    case 60:
-                        alert('almost correct 👏');
-                        break;
-                    case 63:
-                        alert('correct answer');
-                        break;
-                    default:
-                        alert('you are wrong')
+            let Amount, time, Total, Interest, output1, output2, output3;
+
+
+            function answer() {
+                Amount = +(document.querySelector('#Amount').value);
+                time = +(document.querySelector('#time').value);
+                rate = 0.15;
+
+                Interest = Amount * rate * time;
+                console.log(Interest);
+                Total = Interest + Amount;
+                console.log(Total);
+
+                document.getElementById("output1").innerHTML = Amount;
+                document.getElementById("output2").innerHTML = '15%';
+                document.getElementById("output3").innerHTML = Total;
+            }
+
+            // Loan caculator
+            document.querySelector('#back').addEventListener("click",
+                function () {
+                    let borrow = Number(document.getElementById('borrow').value);
+                    let interest = document.getElementById('interest').value;
+                    let time = Number(document.getElementById('time').value);
+                    let intrestrate = interest * borrow;
+                    let repay = Number((intrestrate) / time) + Number(borrow);
+                    document.getElementById('out').innerHTML = ` You have sucessfull borrow an Amount of ${borrow} And Your loan repayment will be ${repay} naira
+                , <br>if you borrow ${borrow} amount at  ${interest} interest`
+                })
+            // hotel booking
+            let sct = document.getElementById('sct');
+            let juk = document.getElementById('juk');
+
+            let get = document.getElementById('get');
+            let bul = document.getElementById('bul');
+            let sub = document.getElementById('sub');
+
+
+
+            function fop() {
+                if (sct.value == '2') {
+                    juk.style.display = ' inline-block';
+                    juk.style.position = 'relative';
+                    sub.style.visibility = 'visible'
+                    sub.style.position = 'relative'
+
+
+                }
+                else {
+                    juk.style.display = 'none';
+                    juk.style.position = 'relative';
+
+                }
+                if (sct.value == '1') {
+                    get.innerHTML = 'YOU CAN STAY IN AN HOTEL BESIDE YOUR VILLAGE '
+
+                }
+
+            }
+
+            sec.addEventListener("change", () => {
+                let yal = document.getElementById('yal').value;
+                let idk = document.getElementById('idk');
+                let sec = document.getElementById('sec');
+                let plat = 0;
+                if (sec.value === 'option1' && Number(yal)) {
+                    plat = yal * 20000;
+                    idk.style.display = ' inline-block'
+                    idk.innerHTML = `you will pay ${plat} for classic suite using ${yal}days and`
+
+                }
+                else if (sec.value === 'option2' && Number(yal)) {
+                    plat = yal * 20000;
+                    idk.style.display = 'inline-block';
+                    idk.style.fontWeight = 'bolder'
+                    idk.style.color = 'black'
+                    idk.innerHTML = `you will pay  ₦${plat} for Emerald suite using ${yal}day(s) `
+                }
+                else if (sec.value === 'option3' && Number(yal)) {
+                    plat = yal * 30000;
+                    idk.style.display = 'inline-block';
+                    idk.style.fontWeight = 'bolder'
+                    idk.style.color = 'black'
+                    idk.innerHTML = `you will pay  ₦${plat} for  suite using ${yal}day(s) `
+                }
+
+                else {
+                    idk.style.display = 'inline-block';
+                    idk.style.fontWeight = 'bolder'
+                    idk.innerHTML = 'enter how long you will stay in the hotel'
+                }
+            })
+
+            idk.style.display = 'inline-block';
+            idk.style.fontWeight = 'bolder'
+            idk.style.color = 'black'
+            idk.innerHTML = ` choose your interest in the type of room below `
+
+
+            function val() {
+                let del = parseInt(document.getElementById('yal').value);
+
+                let recent = new Date().getTime();
+                let count = 86400000 * del;
+                let distance = Number(recent + count);
+                let idk = document.getElementById('idk');
+                let sec = document.getElementById('sec');
+                let ans = document.getElementById('ans');
+                let sam;
+
+                if (!del || isNaN(del) || sec.value === 'choose') {
+                    ans.innerHTML = ' input how long you want to stay in the hotel and choose any type of room'
+                    clearInterval(sam);
+                }
+                else {
+                    yal.style.visibility = 'hidden';
+                    sec.style.visibility = 'hidden';
+                    sub.style.visibility = 'hidden';
+                    pic.style.visibility = 'hidden'
+                    ans.style.marginTop = '0px'
+                    sct.style.visibility = 'hidden'
+                    setInterval(function () {
+                        let recent = new Date().getTime();
+                        let space = distance - recent;
+                        let dayleft = Math.floor(space / (1000 * 60 * 60 * 24));
+                        let hourleft = Math.floor((space % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        let minuteleft = Math.floor((space % (1000 * 60 * 60)) / (1000 * 60));
+                        let secondleft = Math.floor((space % (1000 * 60)) / 1000);
+
+                        ans.innerHTML = ` you rent will expire in ${dayleft} D  ${hourleft} H  ${minuteleft} M ${secondleft}S`;
+                    }, 1000)
+
                 }
             }
+
+            // uber
+            let btnstart = document.getElementById('btnstart');
+            let btnpause = document.getElementById('btnpause');
+            let btnreset = document.getElementById('btnreset');
+            let btncontinue = document.getElementById('btncontinue');
+            let btnstop = document.getElementById('btnstop');
+            let show = document.getElementById('show');
+            let weh = document.getElementById('weh');
+            let go = document.getElementById('go');
+            let tab = document.getElementById("tab");
+            let play = document.getElementById("play");
+            let goo = document.getElementById('goo')
+            let wehh = document.getElementById('wehh');
+            let UBER = document.getElementById('UBER');
+            let SYSTEM = document.getElementById('SYSTEM');
+            let vis = document.getElementById('vis');
+            let het = document.getElementById('het');
+            let hey = document.getElementById('hey');
+            let spat = document.getElementById('spat');
+            let collect = document.getElementById('collect');
+
+
+            let fare = document.getElementById('base');
+            let spent = document.getElementById('time');
+            let caculate = document.getElementById('Total');
+            let rate = document.getElementById('Tax');
+            let pay = document.getElementById('payable');
+
+
+            let initialize = 0;
+            let minout, secout, p, basefare, timefare, cal, taxrate, amount, begin1, begin2;
+
+            function validatehet() {
+                if (!weh.value || !isNaN(weh.value)) {
+                    spat.innerHTML = ' invalid  input'
+                    begin1 = false;
+
+                }
+                else {
+                    spat.innerHTML = " ";
+                    begin1 = true;
+                }
+            }
+
+
+
+
+            function validatehey() {
+                if (!go.value || !isNaN(go.value)) {
+                    collect.innerHTML = 'invalid input'
+                    begin2 = false;
+
+                }
+                else {
+                    collect.innerHTML = " ";
+                    begin2 = true;
+                }
+            }
+
+
+
+            function start() {
+                initialize++;
+                minout = parseInt(initialize / 60);
+                secout = initialize % 60;
+                minout = (minout < 10) ? "0" + minout : minout;
+                secout = (secout < 10) ? "0" + secout : secout;
+
+
+
+                play.innerHTML = `${minout}: ${secout}`
+
+
+            }
+            function ded() {
+
+
+                if (weh.value && go.value) {
+                    p = setInterval(start, 1000)
+                    btnpause.style.visibility = 'visible';
+                    btnpause.style.position = 'relative';
+                    btnstop.style.visibility = 'visible'
+                    btnstop.style.position = 'relative';
+                    btnstart.style.visibility = 'hidden';
+                    play.style.visibility = 'visible'
+                    weh.style.display = 'none'
+                    go.style.display = 'none'
+                    wehh.style.display = 'none'
+                    goo.style.display = 'none'
+                    show.innerHTML = `You are now on your way from ${weh.value} to ${go.value}`;
+                }
+
+                else {
+                    weh.style.display = 'inline-block'
+                    go.style.display = 'inline-block'
+                    validatehet();
+                    validatehey();
+                    alert('Please input where you are going to and your destination.');
+                }
+            }
+
+            function god() {
+                clearInterval(p)
+                btncontinue.style.visibility = 'visible';
+                btncontinue.style.position = 'relative'
+                btnpause.style.visibility = 'hidden'
+                collect.style.display = 'none'
+                spat.style.display = 'none'
+                show.innerHTML = 'please wait a moment the journey will continue soon be patient'
+
+            }
+            function cont() {
+                p = setInterval(start, 1000);
+                btncontinue.style.visibility = 'hidden';
+                btnpause.style.visibility = 'visible'
+                show.innerHTML = `your journey from ${weh.value} to ${go.value} has  continue`
+            }
+            function toop() {
+                clearInterval(p);
+                btnstop.style.visibility = 'hidden'
+                btncontinue.style.visibility = 'hidden'
+                btnreset.style.visibility = 'visible'
+                btnpause.style.visibility = 'hidden'
+                btnreset.style.position = 'relative'
+                show.innerHTML = `your journey from ${weh.value} to ${go.value} has now come to an End `
+            }
+            function yoot() {
+                clearInterval(p)
+                console.log(p)
+                btnreset.style.visibility = 'hidden';
+                play.style.display = 'none';
+                tab.style.visibility = 'visible';
+                show.style.visibility = 'hidden';
+                UBER.style.display = 'none';
+                vis.style.alignItems = 'center';
+                vis.style.justifyContent = 'center';
+
+
+                minout = +(minout);
+                secout = +(secout);
+                document.getElementById('used').innerHTML = `${minout} : ${secout}`;
+
+                basefare = 1000;
+                timefare = Math.floor((minout + secout / 60) * 10);
+                cal = Math.trunc(basefare + timefare);
+                taxrate = Math.trunc(cal * 0.10);
+                amount = Math.trunc(taxrate + cal);
+
+                fare.innerHTML = `: ${basefare}`;
+                // spent.innerHTML = `: ${timefare}`;
+                caculate.innerHTML = `: ${cal}`;
+                rate.innerHTML = `:  ${taxrate}`;
+                pay.innerHTML = `: ${amount}`;
+            }
+
+            btnreset.addEventListener("click", yoot);
+            btnstop.addEventListener("click", toop);
+            btncontinue.addEventListener("click", cont);
+            btnpause.addEventListener('click', god);
+            btnstart.addEventListener('click', ded);
+
+
+
+
+
         </script>
 
-
-        <nav aria-label="Page navigation example">
+        <!-- <nav aria-label="Page navigation example">
             <ul class="pagination">
-                <li class="page-item"><a class="page-link" href="dfd.html">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="index.html">Previous</a></li>
                 <li class="page-item"><a class="page-link" href="index.html">1</a></li>
                 <li class="page-item"><a class="page-link" href="eed.HTML">2</a></li>
                 <li class="page-item"><a class="page-link" href="dfd.html">3</a></li>
-                <li class="page-item"><a class="page-link" href="eed.HTML">Next</a></li>
+                <li class="page-item"><a class="page-link" href="dfd.html">Next</a></li>
             </ul>
-        </nav>
+        </nav> -->
 
-
-
-
-
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
             crossorigin="anonymous"></script>
 </body>
 
